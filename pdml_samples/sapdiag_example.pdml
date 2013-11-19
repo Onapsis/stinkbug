@@ -1,0 +1,522 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="pdml2html.xsl"?>
+<!-- You can find pdml2html.xsl in /home/willis/tools/wireshark/wireshark-1.10.3 or at http://anonsvn.wireshark.org/trunk/wireshark/pdml2html.xsl. -->
+<pdml version="0" creator="wireshark/1.10.3" time="Sun Nov 17 18:40:55 2013" capture_file="samples/sapdiag_emi_test.pcap">
+<packet>
+  <proto name="geninfo" pos="0" showname="General information" size="347">
+    <field name="num" pos="0" show="350" showname="Number" value="15e" size="347"/>
+    <field name="len" pos="0" show="347" showname="Frame Length" value="15b" size="347"/>
+    <field name="caplen" pos="0" show="347" showname="Captured Length" value="15b" size="347"/>
+    <field name="timestamp" pos="0" show="Nov 14, 2013 15:33:53.711651000 EST" showname="Captured Time" value="1384461233.711651000" size="347"/>
+  </proto>
+  <proto name="frame" showname="Frame 350: 347 bytes on wire (2776 bits), 347 bytes captured (2776 bits)" size="347" pos="0">
+    <field name="frame.encap_type" showname="Encapsulation type: Ethernet (1)" size="0" pos="0" show="1"/>
+    <field name="frame.time" showname="Arrival Time: Nov 14, 2013 15:33:53.711651000 EST" size="0" pos="0" show="Nov 14, 2013 15:33:53.711651000"/>
+    <field name="frame.offset_shift" showname="Time shift for this packet: 0.000000000 seconds" size="0" pos="0" show="0.000000000"/>
+    <field name="frame.time_epoch" showname="Epoch Time: 1384461233.711651000 seconds" size="0" pos="0" show="1384461233.711651000"/>
+    <field name="frame.time_delta" showname="Time delta from previous captured frame: 0.027035000 seconds" size="0" pos="0" show="0.027035000"/>
+    <field name="frame.time_delta_displayed" showname="Time delta from previous displayed frame: 0.000000000 seconds" size="0" pos="0" show="0.000000000"/>
+    <field name="frame.time_relative" showname="Time since reference or first frame: 55.632711000 seconds" size="0" pos="0" show="55.632711000"/>
+    <field name="frame.number" showname="Frame Number: 350" size="0" pos="0" show="350"/>
+    <field name="frame.len" showname="Frame Length: 347 bytes (2776 bits)" size="0" pos="0" show="347"/>
+    <field name="frame.cap_len" showname="Capture Length: 347 bytes (2776 bits)" size="0" pos="0" show="347"/>
+    <field name="frame.marked" showname="Frame is marked: False" size="0" pos="0" show="0"/>
+    <field name="frame.ignored" showname="Frame is ignored: False" size="0" pos="0" show="0"/>
+    <field name="frame.protocols" showname="Protocols in frame: eth:ip:tcp:sapni:sapdiag" size="0" pos="0" show="eth:ip:tcp:sapni:sapdiag"/>
+  </proto>
+  <proto name="eth" showname="Ethernet II, Src: Intel_5b:57:87 (00:0e:0c:5b:57:87), Dst: Dell_03:24:cd (78:45:c4:03:24:cd)" size="14" pos="0">
+    <field name="eth.dst" showname="Destination: Dell_03:24:cd (78:45:c4:03:24:cd)" size="6" pos="0" show="78:45:c4:03:24:cd" value="7845c40324cd">
+      <field name="eth.addr" showname="Address: Dell_03:24:cd (78:45:c4:03:24:cd)" size="6" pos="0" show="78:45:c4:03:24:cd" value="7845c40324cd"/>
+      <field name="eth.lg" showname=".... ..0. .... .... .... .... = LG bit: Globally unique address (factory default)" size="3" pos="0" show="0" value="0" unmaskedvalue="7845c4"/>
+      <field name="eth.ig" showname=".... ...0 .... .... .... .... = IG bit: Individual address (unicast)" size="3" pos="0" show="0" value="0" unmaskedvalue="7845c4"/>
+    </field>
+    <field name="eth.src" showname="Source: Intel_5b:57:87 (00:0e:0c:5b:57:87)" size="6" pos="6" show="00:0e:0c:5b:57:87" value="000e0c5b5787">
+      <field name="eth.addr" showname="Address: Intel_5b:57:87 (00:0e:0c:5b:57:87)" size="6" pos="6" show="00:0e:0c:5b:57:87" value="000e0c5b5787"/>
+      <field name="eth.lg" showname=".... ..0. .... .... .... .... = LG bit: Globally unique address (factory default)" size="3" pos="6" show="0" value="0" unmaskedvalue="000e0c"/>
+      <field name="eth.ig" showname=".... ...0 .... .... .... .... = IG bit: Individual address (unicast)" size="3" pos="6" show="0" value="0" unmaskedvalue="000e0c"/>
+    </field>
+    <field name="eth.type" showname="Type: IP (0x0800)" size="2" pos="12" show="0x0800" value="0800"/>
+  </proto>
+  <proto name="ip" showname="Internet Protocol Version 4, Src: 192.168.0.178 (192.168.0.178), Dst: 192.168.100.71 (192.168.100.71)" size="20" pos="14">
+    <field name="ip.version" showname="Version: 4" size="1" pos="14" show="4" value="45"/>
+    <field name="ip.hdr_len" showname="Header length: 20 bytes" size="1" pos="14" show="20" value="45"/>
+    <field name="ip.dsfield" showname="Differentiated Services Field: 0x00 (DSCP 0x00: Default; ECN: 0x00: Not-ECT (Not ECN-Capable Transport))" size="1" pos="15" show="0" value="00">
+      <field name="ip.dsfield.dscp" showname="0000 00.. = Differentiated Services Codepoint: Default (0x00)" size="1" pos="15" show="0x00" value="0" unmaskedvalue="00"/>
+      <field name="ip.dsfield.ecn" showname=".... ..00 = Explicit Congestion Notification: Not-ECT (Not ECN-Capable Transport) (0x00)" size="1" pos="15" show="0x00" value="0" unmaskedvalue="00"/>
+    </field>
+    <field name="ip.len" showname="Total Length: 333" size="2" pos="16" show="333" value="014d"/>
+    <field name="ip.id" showname="Identification: 0xa905 (43269)" size="2" pos="18" show="0xa905" value="a905"/>
+    <field name="ip.flags" showname="Flags: 0x02 (Don&apos;t Fragment)" size="1" pos="20" show="0x02" value="40">
+      <field name="ip.flags.rb" showname="0... .... = Reserved bit: Not set" size="1" pos="20" show="0" value="40"/>
+      <field name="ip.flags.df" showname=".1.. .... = Don&apos;t fragment: Set" size="1" pos="20" show="1" value="40"/>
+      <field name="ip.flags.mf" showname="..0. .... = More fragments: Not set" size="1" pos="20" show="0" value="40"/>
+    </field>
+    <field name="ip.frag_offset" showname="Fragment offset: 0" size="2" pos="20" show="0" value="4000"/>
+    <field name="ip.ttl" showname="Time to live: 63" size="1" pos="22" show="63" value="3f"/>
+    <field name="ip.proto" showname="Protocol: TCP (6)" size="1" pos="23" show="6" value="06"/>
+    <field name="ip.checksum" showname="Header checksum: 0xab5b [correct]" size="2" pos="24" show="0xab5b" value="ab5b">
+      <field name="ip.checksum_good" showname="Good: True" size="2" pos="24" show="1" value="ab5b"/>
+      <field name="ip.checksum_bad" showname="Bad: False" size="2" pos="24" show="0" value="ab5b"/>
+    </field>
+    <field name="ip.src" showname="Source: 192.168.0.178 (192.168.0.178)" size="4" pos="26" show="192.168.0.178" value="c0a800b2"/>
+    <field name="ip.addr" showname="Source or Destination Address: 192.168.0.178 (192.168.0.178)" hide="yes" size="4" pos="26" show="192.168.0.178" value="c0a800b2"/>
+    <field name="ip.src_host" showname="Source Host: 192.168.0.178" hide="yes" size="4" pos="26" show="192.168.0.178" value="c0a800b2"/>
+    <field name="ip.host" showname="Source or Destination Host: 192.168.0.178" hide="yes" size="4" pos="26" show="192.168.0.178" value="c0a800b2"/>
+    <field name="ip.dst" showname="Destination: 192.168.100.71 (192.168.100.71)" size="4" pos="30" show="192.168.100.71" value="c0a86447"/>
+    <field name="ip.addr" showname="Source or Destination Address: 192.168.100.71 (192.168.100.71)" hide="yes" size="4" pos="30" show="192.168.100.71" value="c0a86447"/>
+    <field name="ip.dst_host" showname="Destination Host: 192.168.100.71" hide="yes" size="4" pos="30" show="192.168.100.71" value="c0a86447"/>
+    <field name="ip.host" showname="Source or Destination Host: 192.168.100.71" hide="yes" size="4" pos="30" show="192.168.100.71" value="c0a86447"/>
+  </proto>
+  <proto name="tcp" showname="Transmission Control Protocol, Src Port: 3200 (3200), Dst Port: 42271 (42271), Seq: 183817, Ack: 6688, Len: 281" size="32" pos="34">
+    <field name="tcp.srcport" showname="Source port: 3200 (3200)" size="2" pos="34" show="3200" value="0c80"/>
+    <field name="tcp.dstport" showname="Destination port: 42271 (42271)" size="2" pos="36" show="42271" value="a51f"/>
+    <field name="tcp.port" showname="Source or Destination Port: 3200" hide="yes" size="2" pos="34" show="3200" value="0c80"/>
+    <field name="tcp.port" showname="Source or Destination Port: 42271" hide="yes" size="2" pos="36" show="42271" value="a51f"/>
+    <field name="tcp.stream" showname="Stream index: 6" size="0" pos="34" show="6"/>
+    <field name="tcp.len" showname="TCP Segment Len: 281" hide="yes" size="1" pos="46" show="281" value="80"/>
+    <field name="tcp.seq" showname="Sequence number: 183817    (relative sequence number)" size="4" pos="38" show="183817" value="b2bdeee4"/>
+    <field name="tcp.nxtseq" showname="Next sequence number: 184098    (relative sequence number)" size="0" pos="34" show="184098"/>
+    <field name="tcp.ack" showname="Acknowledgment number: 6688    (relative ack number)" size="4" pos="42" show="6688" value="79249566"/>
+    <field name="tcp.hdr_len" showname="Header length: 32 bytes" size="1" pos="46" show="32" value="80"/>
+    <field name="tcp.flags" showname="Flags: 0x018 (PSH, ACK)" size="2" pos="46" show="0x0018" value="18" unmaskedvalue="8018">
+      <field name="tcp.flags.res" showname="000. .... .... = Reserved: Not set" size="1" pos="46" show="0" value="0" unmaskedvalue="80"/>
+      <field name="tcp.flags.ns" showname="...0 .... .... = Nonce: Not set" size="1" pos="46" show="0" value="0" unmaskedvalue="80"/>
+      <field name="tcp.flags.cwr" showname=".... 0... .... = Congestion Window Reduced (CWR): Not set" size="1" pos="47" show="0" value="0" unmaskedvalue="18"/>
+      <field name="tcp.flags.ecn" showname=".... .0.. .... = ECN-Echo: Not set" size="1" pos="47" show="0" value="0" unmaskedvalue="18"/>
+      <field name="tcp.flags.urg" showname=".... ..0. .... = Urgent: Not set" size="1" pos="47" show="0" value="0" unmaskedvalue="18"/>
+      <field name="tcp.flags.ack" showname=".... ...1 .... = Acknowledgment: Set" size="1" pos="47" show="1" value="1" unmaskedvalue="18"/>
+      <field name="tcp.flags.push" showname=".... .... 1... = Push: Set" size="1" pos="47" show="1" value="1" unmaskedvalue="18"/>
+      <field name="tcp.flags.reset" showname=".... .... .0.. = Reset: Not set" size="1" pos="47" show="0" value="0" unmaskedvalue="18"/>
+      <field name="tcp.flags.syn" showname=".... .... ..0. = Syn: Not set" size="1" pos="47" show="0" value="0" unmaskedvalue="18"/>
+      <field name="tcp.flags.fin" showname=".... .... ...0 = Fin: Not set" size="1" pos="47" show="0" value="0" unmaskedvalue="18"/>
+    </field>
+    <field name="tcp.window_size_value" showname="Window size value: 311" size="2" pos="48" show="311" value="0137"/>
+    <field name="tcp.window_size" showname="Calculated window size: 39808" size="2" pos="48" show="39808" value="0137"/>
+    <field name="tcp.window_size_scalefactor" showname="Window size scaling factor: 128" size="2" pos="48" show="128" value="0137"/>
+    <field name="tcp.checksum" showname="Checksum: 0x26a5 [validation disabled]" size="2" pos="50" show="0x26a5" value="26a5">
+      <field name="tcp.checksum_good" showname="Good Checksum: False" size="2" pos="50" show="0" value="26a5"/>
+      <field name="tcp.checksum_bad" showname="Bad Checksum: False" size="2" pos="50" show="0" value="26a5"/>
+    </field>
+    <field name="tcp.options" showname="Options: (12 bytes), No-Operation (NOP), No-Operation (NOP), Timestamps" size="12" pos="54" show="01:01:08:0a:71:90:a8:f0:09:ef:ce:cc" value="0101080a7190a8f009efcecc">
+      <field name="" show="No-Operation (NOP)" size="1" pos="54" value="01">
+        <field name="tcp.options.type" showname="Type: 1" size="1" pos="54" show="1" value="01">
+          <field name="tcp.options.type.copy" showname="0... .... = Copy on fragmentation: No" size="1" pos="54" show="0" value="0" unmaskedvalue="01"/>
+          <field name="tcp.options.type.class" showname=".00. .... = Class: Control (0)" size="1" pos="54" show="0" value="0" unmaskedvalue="01"/>
+          <field name="tcp.options.type.number" showname="...0 0001 = Number: No-Operation (NOP) (1)" size="1" pos="54" show="1" value="1" unmaskedvalue="01"/>
+        </field>
+      </field>
+      <field name="" show="No-Operation (NOP)" size="1" pos="55" value="01">
+        <field name="tcp.options.type" showname="Type: 1" size="1" pos="55" show="1" value="01">
+          <field name="tcp.options.type.copy" showname="0... .... = Copy on fragmentation: No" size="1" pos="55" show="0" value="0" unmaskedvalue="01"/>
+          <field name="tcp.options.type.class" showname=".00. .... = Class: Control (0)" size="1" pos="55" show="0" value="0" unmaskedvalue="01"/>
+          <field name="tcp.options.type.number" showname="...0 0001 = Number: No-Operation (NOP) (1)" size="1" pos="55" show="1" value="1" unmaskedvalue="01"/>
+        </field>
+      </field>
+      <field name="" show="Timestamps: TSval 1905305840, TSecr 166710988" size="10" pos="56" value="080a7190a8f009efcecc">
+        <field name="tcp.option_kind" showname="Kind: Timestamp (8)" size="1" pos="56" show="8" value="08"/>
+        <field name="tcp.option_len" showname="Length: 10" size="1" pos="57" show="10" value="0a"/>
+        <field name="tcp.options.timestamp.tsval" showname="Timestamp value: 1905305840" size="4" pos="58" show="1905305840" value="7190a8f0"/>
+        <field name="tcp.options.timestamp.tsecr" showname="Timestamp echo reply: 166710988" size="4" pos="62" show="166710988" value="09efcecc"/>
+      </field>
+    </field>
+    <field name="tcp.analysis" showname="SEQ/ACK analysis" size="0" pos="34" show="" value="">
+      <field name="tcp.analysis.acks_frame" showname="This is an ACK to the segment in frame: 349" size="0" pos="34" show="349"/>
+      <field name="tcp.analysis.ack_rtt" showname="The RTT to ACK the segment was: 0.027035000 seconds" size="0" pos="34" show="0.027035000"/>
+      <field name="tcp.analysis.bytes_in_flight" showname="Bytes in flight: 281" size="0" pos="34" show="281"/>
+    </field>
+    <field name="tcp.pdu.size" showname="PDU Size: 281" size="281" pos="66" show="281" value="0000011500001100000200012b010000121f9d023a0136410685fff5ff746f6c37bf56c25127cc3a5d74faeb4ff6bdcc05fffb99182040804d99811f48f1319a181a1a308486b85900c5d419148062ec4c268606c60ca17999c9f929a93e99252539a9a179b98945d9a92940458a0c0aa6461626ce8ecea6ae16a606c6e69616ae860660e06ce0686160e06424c0c6c4c0ece76e20c0c6ccc0939398549c58505c5466606c21c026c9c064f84a808d918109e4082e20c528c026cfa0cc14d472eada8b00f3190f81ae3bb08261132350e00eb20050b92a03574890a38b6bb0877f3890abc9c06b6e60c4606e6460c060626008141163606160be304180450dc86060101560e36160363030646480030853804d948181070000"/>
+  </proto>
+  <proto name="sapni" showname="SAP NI Protocol, Len: 277" size="281" pos="66">
+    <field name="sapni.length" showname="Length: 277" size="4" pos="66" show="277" value="00000115"/>
+    <field name="sapni.payload" showname="Payload" size="277" pos="70" show="" value=""/>
+  </proto>
+  <proto name="sapdiag" showname="SAP Diag Protocol, Uncompressed Len: 299" size="277" pos="70">
+    <field name="sapdiag.header" showname="Header" size="8" pos="70" show="" value="">
+      <field name="sapdiag.header.mode" showname="Mode: 0" size="1" pos="70" show="0" value="00"/>
+      <field name="sapdiag.header.comflag" showname="Com Flag: 0x00" size="1" pos="71" show="0x00" value="00">
+        <field name="sapdiag.header.comflag.TERM_EOS" showname=".... ...0 = Com Flag TERM_EOS: False" size="1" pos="71" show="0" value="0" unmaskedvalue="00"/>
+        <field name="sapdiag.header.comflag.TERM_EOC" showname=".... ..0. = Com Flag TERM_EOC: False" size="1" pos="71" show="0" value="0" unmaskedvalue="00"/>
+        <field name="sapdiag.header.comflag.TERM_NOP" showname=".... .0.. = Com Flag TERM_NOP: False" size="1" pos="71" show="0" value="0" unmaskedvalue="00"/>
+        <field name="sapdiag.header.comflag.TERM_EOP" showname=".... 0... = Com Flag TERM_EOP: False" size="1" pos="71" show="0" value="0" unmaskedvalue="00"/>
+        <field name="sapdiag.header.comflag.TERM_INI" showname="...0 .... = Com Flag TERM_INI: False" size="1" pos="71" show="0" value="0" unmaskedvalue="00"/>
+        <field name="sapdiag.header.comflag.TERM_CAS" showname="..0. .... = Com Flag TERM_CAS: False" size="1" pos="71" show="0" value="0" unmaskedvalue="00"/>
+        <field name="sapdiag.header.comflag.TERM_NNM" showname=".0.. .... = Com Flag TERM_NNM: False" size="1" pos="71" show="0" value="0" unmaskedvalue="00"/>
+        <field name="sapdiag.header.comflag.TERM_GRA" showname="0... .... = Com Flag TERM_GRA: False" size="1" pos="71" show="0" value="0" unmaskedvalue="00"/>
+      </field>
+      <field name="sapdiag.header.modestat" showname="Mode Stat: 17" size="1" pos="72" show="17" value="11"/>
+      <field name="sapdiag.header.errorflag" showname="Error Flag: False" size="1" pos="73" show="0" value="00"/>
+      <field name="sapdiag.header.msgtype" showname="Message Type: 0" size="1" pos="74" show="0" value="00"/>
+      <field name="sapdiag.header.msginfo" showname="Message Info: 2" size="1" pos="75" show="2" value="02"/>
+      <field name="sapdiag.header.msgrc" showname="Message Rc: 0" size="1" pos="76" show="0" value="00"/>
+      <field name="sapdiag.header.compress" showname="Compress: Compression switched on (0x01)" size="1" pos="77" show="0x01" value="01"/>
+    </field>
+    <field name="sapdiag.header.compression" showname="Compression Header" size="8" pos="78" show="" value="">
+      <field name="sapdiag.header.compression.uncomplength" showname="Uncompressed Length: 299" size="4" pos="78" show="299" value="2b010000"/>
+      <field name="sapdiag.header.compression.algorithm" showname="Compression Algorithm: LZH (0x12)" size="1" pos="82" show="0x12" value="12"/>
+      <field name="sapdiag.header.compression.magic" showname="Magic Bytes: 0x1f9d" size="2" pos="83" show="0x1f9d" value="1f9d"/>
+      <field name="sapdiag.header.compression.special" showname="Special: 0x02" size="1" pos="85" show="0x02" value="02"/>
+      <field name="sapdiag.header.compression.returncode" showname="Decompress Return Code: CS_END_OF_STREAM (End of data) (1)" size="8" pos="78" show="1" value="2b010000121f9d02"/>
+    </field>
+    <field name="sapdiag.message" showname="Message" size="299" pos="70" show="" value="">
+      <field name="sapdiag.item" showname="Item: APPL, ST_R3INFO, SUPPORTDATA, Len=32" size="37" pos="0" show="" value="">
+        <field name="sapdiag.item.type" showname="Type: APPL (0x10)" size="1" pos="0" show="0x10" value="22"/>
+        <field name="sapdiag.item.id" showname="ID: ST_R3INFO (0x06)" size="1" pos="1" show="0x06" value="b7"/>
+        <field name="sapdiag.item.sid" showname="SID: SUPPORTDATA (0x11)" size="1" pos="2" show="0x11" value="05"/>
+        <field name="sapdiag.item.length" showname="Length: 32" size="2" pos="3" show="32" value="5742"/>
+        <field name="sapdiag.item.value" showname="Value" size="32" pos="5" show="" value="">
+          <field name="sapdiag.diag.supportbits.PROGRESS_INDICATOR" showname=".... ...1 = Support Bit PROGRESS_INDICATOR: True" size="1" pos="5" show="1" value="1" unmaskedvalue="7f"/>
+          <field name="sapdiag.diag.supportbits.SAPGUI_LABELS" showname=".... ..1. = Support Bit SAPGUI_LABELS: True" size="1" pos="5" show="1" value="1" unmaskedvalue="7f"/>
+          <field name="sapdiag.diag.supportbits.SAPGUI_DIAGVERSION" showname=".... .1.. = Support Bit SAPGUI_DIAGVERSION: True" size="1" pos="5" show="1" value="1" unmaskedvalue="7f"/>
+          <field name="sapdiag.diag.supportbits.SAPGUI_SELECT_RECT" showname=".... 1... = Support Bit SAPGUI_SELECT_RECT: True" size="1" pos="5" show="1" value="1" unmaskedvalue="7f"/>
+          <field name="sapdiag.diag.supportbits.SAPGUI_SYMBOL_RIGHT" showname="...1 .... = Support Bit SAPGUI_SYMBOL_RIGHT: True" size="1" pos="5" show="1" value="1" unmaskedvalue="7f"/>
+          <field name="sapdiag.diag.supportbits.SAPGUI_FONT_METRIC" showname="..1. .... = Support Bit SAPGUI_FONT_METRIC: True" size="1" pos="5" show="1" value="1" unmaskedvalue="7f"/>
+          <field name="sapdiag.diag.supportbits.SAPGUI_COMPR_ENHANCED" showname=".1.. .... = Support Bit SAPGUI_COMPR_ENHANCED: True" size="1" pos="5" show="1" value="1" unmaskedvalue="7f"/>
+          <field name="sapdiag.diag.supportbits.SAPGUI_IMODE" showname="1... .... = Support Bit SAPGUI_IMODE: True" size="1" pos="5" show="1" value="1" unmaskedvalue="7f"/>
+          <field name="sapdiag.diag.supportbits.SAPGUI_LONG_MESSAGE" showname=".... ...1 = Support Bit SAPGUI_LONG_MESSAGE: True" size="1" pos="6" show="1" value="1" unmaskedvalue="00"/>
+          <field name="sapdiag.diag.supportbits.SAPGUI_TABLE" showname=".... ..1. = Support Bit SAPGUI_TABLE: True" size="1" pos="6" show="1" value="1" unmaskedvalue="00"/>
+          <field name="sapdiag.diag.supportbits.SAPGUI_FOCUS_1" showname=".... .1.. = Support Bit SAPGUI_FOCUS_1: True" size="1" pos="6" show="1" value="1" unmaskedvalue="00"/>
+          <field name="sapdiag.diag.supportbits.SAPGUI_PUSHBUTTON_1" showname=".... 1... = Support Bit SAPGUI_PUSHBUTTON_1: True" size="1" pos="6" show="1" value="1" unmaskedvalue="00"/>
+          <field name="sapdiag.diag.supportbits.UPPERCASE" showname="...1 .... = Support Bit UPPERCASE: True" size="1" pos="6" show="1" value="1" unmaskedvalue="00"/>
+          <field name="sapdiag.diag.supportbits.SAPGUI_TABPROPERTY" showname="..1. .... = Support Bit SAPGUI_TABPROPERTY: True" size="1" pos="6" show="1" value="1" unmaskedvalue="00"/>
+          <field name="sapdiag.diag.supportbits.INPUT_UPPERCASE" showname=".1.. .... = Support Bit INPUT_UPPERCASE: True" size="1" pos="6" show="1" value="1" unmaskedvalue="00"/>
+          <field name="sapdiag.diag.supportbits.RFC_DIALOG" showname="0... .... = Support Bit RFC_DIALOG: False" size="1" pos="6" show="0" value="0" unmaskedvalue="00"/>
+          <field name="sapdiag.diag.supportbits.LIST_HOTSPOT" showname=".... ...0 = Support Bit LIST_HOTSPOT: False" size="1" pos="7" show="0" value="0" unmaskedvalue="00"/>
+          <field name="sapdiag.diag.supportbits.FKEY_TABLE" showname=".... ..1. = Support Bit FKEY_TABLE: True" size="1" pos="7" show="1" value="1" unmaskedvalue="00"/>
+          <field name="sapdiag.diag.supportbits.MENU_SHORTCUT" showname=".... .1.. = Support Bit MENU_SHORTCUT: True" size="1" pos="7" show="1" value="1" unmaskedvalue="00"/>
+          <field name="sapdiag.diag.supportbits.STOP_TRANS" showname=".... 1... = Support Bit STOP_TRANS: True" size="1" pos="7" show="1" value="1" unmaskedvalue="00"/>
+          <field name="sapdiag.diag.supportbits.FULL_MENU" showname="...1 .... = Support Bit FULL_MENU: True" size="1" pos="7" show="1" value="1" unmaskedvalue="00"/>
+          <field name="sapdiag.diag.supportbits.OBJECT_NAMES" showname="..1. .... = Support Bit OBJECT_NAMES: True" size="1" pos="7" show="1" value="1" unmaskedvalue="00"/>
+          <field name="sapdiag.diag.supportbits.CONTAINER_TYPE" showname=".1.. .... = Support Bit CONTAINER_TYPE: True" size="1" pos="7" show="1" value="1" unmaskedvalue="00"/>
+          <field name="sapdiag.diag.supportbits.DLGH_FLAGS" showname="1... .... = Support Bit DLGH_FLAGS: True" size="1" pos="7" show="1" value="1" unmaskedvalue="00"/>
+          <field name="sapdiag.diag.supportbits.APPL_MNU" showname=".... ...1 = Support Bit APPL_MNU: True" size="1" pos="8" show="1" value="1" unmaskedvalue="65"/>
+          <field name="sapdiag.diag.supportbits.MESSAGE_INFO" showname=".... ..0. = Support Bit MESSAGE_INFO: False" size="1" pos="8" show="0" value="0" unmaskedvalue="65"/>
+          <field name="sapdiag.diag.supportbits.MESDUM_FLAG1" showname=".... .1.. = Support Bit MESDUM_FLAG1: True" size="1" pos="8" show="1" value="1" unmaskedvalue="65"/>
+          <field name="sapdiag.diag.supportbits.TABSEL_ATTRIB" showname=".... 1... = Support Bit TABSEL_ATTRIB: True" size="1" pos="8" show="1" value="1" unmaskedvalue="65"/>
+          <field name="sapdiag.diag.supportbits.GUIAPI" showname="...0 .... = Support Bit GUIAPI: False" size="1" pos="8" show="0" value="0" unmaskedvalue="65"/>
+          <field name="sapdiag.diag.supportbits.NOGRAPH" showname="..1. .... = Support Bit NOGRAPH: True" size="1" pos="8" show="1" value="1" unmaskedvalue="65"/>
+          <field name="sapdiag.diag.supportbits.NOMESSAGES" showname=".0.. .... = Support Bit NOMESSAGES: False" size="1" pos="8" show="0" value="0" unmaskedvalue="65"/>
+          <field name="sapdiag.diag.supportbits.NORABAX" showname="0... .... = Support Bit NORABAX: False" size="1" pos="8" show="0" value="0" unmaskedvalue="65"/>
+          <field name="sapdiag.diag.supportbits.NOSYSMSG" showname=".... ...0 = Support Bit NOSYSMSG: False" size="1" pos="9" show="0" value="0" unmaskedvalue="74"/>
+          <field name="sapdiag.diag.supportbits.NOSAPSCRIPT" showname=".... ..0. = Support Bit NOSAPSCRIPT: False" size="1" pos="9" show="0" value="0" unmaskedvalue="74"/>
+          <field name="sapdiag.diag.supportbits.NORFC" showname=".... .0.. = Support Bit NORFC: False" size="1" pos="9" show="0" value="0" unmaskedvalue="74"/>
+          <field name="sapdiag.diag.supportbits.NEW_BSD_JUSTRIGHT" showname=".... 1... = Support Bit NEW_BSD_JUSTRIGHT: True" size="1" pos="9" show="1" value="1" unmaskedvalue="74"/>
+          <field name="sapdiag.diag.supportbits.MESSAGE_VARS" showname="...1 .... = Support Bit MESSAGE_VARS: True" size="1" pos="9" show="1" value="1" unmaskedvalue="74"/>
+          <field name="sapdiag.diag.supportbits.OCX_SUPPORT" showname="..0. .... = Support Bit OCX_SUPPORT: False" size="1" pos="9" show="0" value="0" unmaskedvalue="74"/>
+          <field name="sapdiag.diag.supportbits.SCROLL_INFOS" showname=".1.. .... = Support Bit SCROLL_INFOS: True" size="1" pos="9" show="1" value="1" unmaskedvalue="74"/>
+          <field name="sapdiag.diag.supportbits.TABLE_SIZE_OK" showname="1... .... = Support Bit TABLE_SIZE_OK: True" size="1" pos="9" show="1" value="1" unmaskedvalue="74"/>
+          <field name="sapdiag.diag.supportbits.MESSAGE_INFO2" showname=".... ...1 = Support Bit MESSAGE_INFO2: True" size="1" pos="10" show="1" value="1" unmaskedvalue="68"/>
+          <field name="sapdiag.diag.supportbits.VARINFO_OKCODE" showname=".... ..1. = Support Bit VARINFO_OKCODE: True" size="1" pos="10" show="1" value="1" unmaskedvalue="68"/>
+          <field name="sapdiag.diag.supportbits.CURR_TCODE" showname=".... .1.. = Support Bit CURR_TCODE: True" size="1" pos="10" show="1" value="1" unmaskedvalue="68"/>
+          <field name="sapdiag.diag.supportbits.CONN_WSIZE" showname=".... 0... = Support Bit CONN_WSIZE: False" size="1" pos="10" show="0" value="0" unmaskedvalue="68"/>
+          <field name="sapdiag.diag.supportbits.PUSHBUTTON" showname="...1 .... = Support Bit PUSHBUTTON: True" size="1" pos="10" show="1" value="1" unmaskedvalue="68"/>
+          <field name="sapdiag.diag.supportbits.TABSTRIP" showname="..1. .... = Support Bit TABSTRIP: True" size="1" pos="10" show="1" value="1" unmaskedvalue="68"/>
+          <field name="sapdiag.diag.supportbits.TABSCROLL_INFOS" showname=".0.. .... = Support Bit TABSCROLL_INFOS: False" size="1" pos="10" show="0" value="0" unmaskedvalue="68"/>
+          <field name="sapdiag.diag.supportbits.TABLE_FIELD_NAMES" showname="1... .... = Support Bit TABLE_FIELD_NAMES: True" size="1" pos="10" show="1" value="1" unmaskedvalue="68"/>
+          <field name="sapdiag.diag.supportbits.NEW_MODE_REQUEST" showname=".... ...1 = Support Bit NEW_MODE_REQUEST: True" size="1" pos="11" show="1" value="1" unmaskedvalue="2e"/>
+          <field name="sapdiag.diag.supportbits.RFCBLOB_DIAG_PARSER" showname=".... ..1. = Support Bit RFCBLOB_DIAG_PARSER: True" size="1" pos="11" show="1" value="1" unmaskedvalue="2e"/>
+          <field name="sapdiag.diag.supportbits.MULTI_LOGIN_USER" showname=".... .1.. = Support Bit MULTI_LOGIN_USER: True" size="1" pos="11" show="1" value="1" unmaskedvalue="2e"/>
+          <field name="sapdiag.diag.supportbits.CONTROL_CONTAINER" showname=".... 0... = Support Bit CONTROL_CONTAINER: False" size="1" pos="11" show="0" value="0" unmaskedvalue="2e"/>
+          <field name="sapdiag.diag.supportbits.APPTOOLBAR_FIXED" showname="...1 .... = Support Bit APPTOOLBAR_FIXED: True" size="1" pos="11" show="1" value="1" unmaskedvalue="2e"/>
+          <field name="sapdiag.diag.supportbits.R3INFO_USER_CHECKED" showname="..1. .... = Support Bit R3INFO_USER_CHECKED: True" size="1" pos="11" show="1" value="1" unmaskedvalue="2e"/>
+          <field name="sapdiag.diag.supportbits.NEED_STDDYNPRO" showname=".0.. .... = Support Bit NEED_STDDYNPRO: False" size="1" pos="11" show="0" value="0" unmaskedvalue="2e"/>
+          <field name="sapdiag.diag.supportbits.TYPE_SERVER" showname="0... .... = Support Bit TYPE_SERVER: False" size="1" pos="11" show="0" value="0" unmaskedvalue="2e"/>
+          <field name="sapdiag.diag.supportbits.COMBOBOX" showname=".... ...0 = Support Bit COMBOBOX: False" size="1" pos="12" show="0" value="0" unmaskedvalue="6c"/>
+          <field name="sapdiag.diag.supportbits.INPUT_REQUIRED" showname=".... ..1. = Support Bit INPUT_REQUIRED: True" size="1" pos="12" show="1" value="1" unmaskedvalue="6c"/>
+          <field name="sapdiag.diag.supportbits.ISO_LANGUAGE" showname=".... .1.. = Support Bit ISO_LANGUAGE: True" size="1" pos="12" show="1" value="1" unmaskedvalue="6c"/>
+          <field name="sapdiag.diag.supportbits.COMBOBOX_TABLE" showname=".... 0... = Support Bit COMBOBOX_TABLE: False" size="1" pos="12" show="0" value="0" unmaskedvalue="6c"/>
+          <field name="sapdiag.diag.supportbits.R3INFO_FLAGS" showname="...1 .... = Support Bit R3INFO_FLAGS: True" size="1" pos="12" show="1" value="1" unmaskedvalue="6c"/>
+          <field name="sapdiag.diag.supportbits.CHECKRADIO_EVENTS" showname="..0. .... = Support Bit CHECKRADIO_EVENTS: False" size="1" pos="12" show="0" value="0" unmaskedvalue="6c"/>
+          <field name="sapdiag.diag.supportbits.R3INFO_USERID" showname=".1.. .... = Support Bit R3INFO_USERID: True" size="1" pos="12" show="1" value="1" unmaskedvalue="6c"/>
+          <field name="sapdiag.diag.supportbits.R3INFO_ROLLCOUNT" showname="1... .... = Support Bit R3INFO_ROLLCOUNT: True" size="1" pos="12" show="1" value="1" unmaskedvalue="6c"/>
+          <field name="sapdiag.diag.supportbits.USER_TURNTIME2" showname=".... ...0 = Support Bit USER_TURNTIME2: False" size="1" pos="13" show="0" value="0" unmaskedvalue="67"/>
+          <field name="sapdiag.diag.supportbits.NUM_FIELD" showname=".... ..0. = Support Bit NUM_FIELD: False" size="1" pos="13" show="0" value="0" unmaskedvalue="67"/>
+          <field name="sapdiag.diag.supportbits.WIN16" showname=".... .1.. = Support Bit WIN16: True" size="1" pos="13" show="1" value="1" unmaskedvalue="67"/>
+          <field name="sapdiag.diag.supportbits.CONTEXT_MENU" showname=".... 0... = Support Bit CONTEXT_MENU: False" size="1" pos="13" show="0" value="0" unmaskedvalue="67"/>
+          <field name="sapdiag.diag.supportbits.SCROLLABLE_TABSTRIP_PAGE" showname="...1 .... = Support Bit SCROLLABLE_TABSTRIP_PAGE: True" size="1" pos="13" show="1" value="1" unmaskedvalue="67"/>
+          <field name="sapdiag.diag.supportbits.EVENT_DESCRIPTION" showname="..1. .... = Support Bit EVENT_DESCRIPTION: True" size="1" pos="13" show="1" value="1" unmaskedvalue="67"/>
+          <field name="sapdiag.diag.supportbits.LABEL_OWNER" showname=".1.. .... = Support Bit LABEL_OWNER: True" size="1" pos="13" show="1" value="1" unmaskedvalue="67"/>
+          <field name="sapdiag.diag.supportbits.CLICKABLE_FIELD" showname="0... .... = Support Bit CLICKABLE_FIELD: False" size="1" pos="13" show="0" value="0" unmaskedvalue="67"/>
+          <field name="sapdiag.diag.supportbits.PROPERTY_BAG" showname=".... ...0 = Support Bit PROPERTY_BAG: False" size="1" pos="14" show="0" value="0" unmaskedvalue="20"/>
+          <field name="sapdiag.diag.supportbits.UNUSED_1" showname=".... ..0. = Support Bit UNUSED_1: False" size="1" pos="14" show="0" value="0" unmaskedvalue="20"/>
+          <field name="sapdiag.diag.supportbits.TABLE_ROW_REFERENCES_2" showname=".... .0.. = Support Bit TABLE_ROW_REFERENCES_2: False" size="1" pos="14" show="0" value="0" unmaskedvalue="20"/>
+          <field name="sapdiag.diag.supportbits.PROPFONT_VALID" showname=".... 1... = Support Bit PROPFONT_VALID: True" size="1" pos="14" show="1" value="1" unmaskedvalue="20"/>
+          <field name="sapdiag.diag.supportbits.VARINFO_CONTAINER" showname="...0 .... = Support Bit VARINFO_CONTAINER: False" size="1" pos="14" show="0" value="0" unmaskedvalue="20"/>
+          <field name="sapdiag.diag.supportbits.R3INFO_IMODEUUID" showname="..0. .... = Support Bit R3INFO_IMODEUUID: False" size="1" pos="14" show="0" value="0" unmaskedvalue="20"/>
+          <field name="sapdiag.diag.supportbits.NOTGUI" showname=".0.. .... = Support Bit NOTGUI: False" size="1" pos="14" show="0" value="0" unmaskedvalue="20"/>
+          <field name="sapdiag.diag.supportbits.WAN" showname="0... .... = Support Bit WAN: False" size="1" pos="14" show="0" value="0" unmaskedvalue="20"/>
+          <field name="sapdiag.diag.supportbits.XML_BLOBS" showname=".... ...0 = Support Bit XML_BLOBS: False" size="1" pos="15" show="0" value="0" unmaskedvalue="3d"/>
+          <field name="sapdiag.diag.supportbits.RFC_QUEUE" showname=".... ..1. = Support Bit RFC_QUEUE: True" size="1" pos="15" show="1" value="1" unmaskedvalue="3d"/>
+          <field name="sapdiag.diag.supportbits.RFC_COMPRESS" showname=".... .1.. = Support Bit RFC_COMPRESS: True" size="1" pos="15" show="1" value="1" unmaskedvalue="3d"/>
+          <field name="sapdiag.diag.supportbits.JAVA_BEANS" showname=".... 1... = Support Bit JAVA_BEANS: True" size="1" pos="15" show="1" value="1" unmaskedvalue="3d"/>
+          <field name="sapdiag.diag.supportbits.DPLOADONDEMAND" showname="...1 .... = Support Bit DPLOADONDEMAND: True" size="1" pos="15" show="1" value="1" unmaskedvalue="3d"/>
+          <field name="sapdiag.diag.supportbits.CTL_PROPCACHE" showname="..1. .... = Support Bit CTL_PROPCACHE: True" size="1" pos="15" show="1" value="1" unmaskedvalue="3d"/>
+          <field name="sapdiag.diag.supportbits.ENJOY_IMODEUUID" showname=".1.. .... = Support Bit ENJOY_IMODEUUID: True" size="1" pos="15" show="1" value="1" unmaskedvalue="3d"/>
+          <field name="sapdiag.diag.supportbits.ENJOY_IMODEUUID2" showname="0... .... = Support Bit ENJOY_IMODEUUID2: False" size="1" pos="15" show="0" value="0" unmaskedvalue="3d"/>
+          <field name="sapdiag.diag.supportbits.RFC_ASYNC_BLOB" showname=".... ...1 = Support Bit RFC_ASYNC_BLOB: True" size="1" pos="16" show="1" value="1" unmaskedvalue="3d"/>
+          <field name="sapdiag.diag.supportbits.KEEP_SCROLLPOS" showname=".... ..1. = Support Bit KEEP_SCROLLPOS: True" size="1" pos="16" show="1" value="1" unmaskedvalue="3d"/>
+          <field name="sapdiag.diag.supportbits.UNUSED_2" showname=".... .0.. = Support Bit UNUSED_2: False" size="1" pos="16" show="0" value="0" unmaskedvalue="3d"/>
+          <field name="sapdiag.diag.supportbits.UNUSED_3" showname=".... 0... = Support Bit UNUSED_3: False" size="1" pos="16" show="0" value="0" unmaskedvalue="3d"/>
+          <field name="sapdiag.diag.supportbits.XML_PROPERTIES" showname="...1 .... = Support Bit XML_PROPERTIES: True" size="1" pos="16" show="1" value="1" unmaskedvalue="3d"/>
+          <field name="sapdiag.diag.supportbits.UNUSED_4" showname="..0. .... = Support Bit UNUSED_4: False" size="1" pos="16" show="0" value="0" unmaskedvalue="3d"/>
+          <field name="sapdiag.diag.supportbits.HEX_FIELD" showname=".0.. .... = Support Bit HEX_FIELD: False" size="1" pos="16" show="0" value="0" unmaskedvalue="3d"/>
+          <field name="sapdiag.diag.supportbits.HAS_CACHE" showname="0... .... = Support Bit HAS_CACHE: False" size="1" pos="16" show="0" value="0" unmaskedvalue="3d"/>
+          <field name="sapdiag.diag.supportbits.XML_PROP_TABLE" showname=".... ...1 = Support Bit XML_PROP_TABLE: True" size="1" pos="17" show="1" value="1" unmaskedvalue="20"/>
+          <field name="sapdiag.diag.supportbits.UNUSED_5" showname=".... ..0. = Support Bit UNUSED_5: False" size="1" pos="17" show="0" value="0" unmaskedvalue="20"/>
+          <field name="sapdiag.diag.supportbits.ITS" showname=".... .1.. = Support Bit ITS: True" size="1" pos="17" show="1" value="1" unmaskedvalue="20"/>
+          <field name="sapdiag.diag.supportbits.NO_EASYACCESS" showname=".... 0... = Support Bit NO_EASYACCESS: False" size="1" pos="17" show="0" value="0" unmaskedvalue="20"/>
+          <field name="sapdiag.diag.supportbits.PROPERTYPUMP" showname="...0 .... = Support Bit PROPERTYPUMP: False" size="1" pos="17" show="0" value="0" unmaskedvalue="20"/>
+          <field name="sapdiag.diag.supportbits.COOKIE" showname="..0. .... = Support Bit COOKIE: False" size="1" pos="17" show="0" value="0" unmaskedvalue="20"/>
+          <field name="sapdiag.diag.supportbits.UNUSED_6" showname=".0.. .... = Support Bit UNUSED_6: False" size="1" pos="17" show="0" value="0" unmaskedvalue="20"/>
+          <field name="sapdiag.diag.supportbits.SUPPBIT_AREA_SIZE" showname="0... .... = Support Bit SUPPBIT_AREA_SIZE: False" size="1" pos="17" show="0" value="0" unmaskedvalue="20"/>
+          <field name="sapdiag.diag.supportbits.DPLOADONDEMAND_WRITE" showname=".... ...1 = Support Bit DPLOADONDEMAND_WRITE: True" size="1" pos="18" show="1" value="1" unmaskedvalue="30"/>
+          <field name="sapdiag.diag.supportbits.CONTROL_FOCUS" showname=".... ..1. = Support Bit CONTROL_FOCUS: True" size="1" pos="18" show="1" value="1" unmaskedvalue="30"/>
+          <field name="sapdiag.diag.supportbits.ENTRY_HISTORY" showname=".... .1.. = Support Bit ENTRY_HISTORY: True" size="1" pos="18" show="1" value="1" unmaskedvalue="30"/>
+          <field name="sapdiag.diag.supportbits.AUTO_CODEPAGE" showname=".... 0... = Support Bit AUTO_CODEPAGE: False" size="1" pos="18" show="0" value="0" unmaskedvalue="30"/>
+          <field name="sapdiag.diag.supportbits.CACHED_VSETS" showname="...1 .... = Support Bit CACHED_VSETS: True" size="1" pos="18" show="1" value="1" unmaskedvalue="30"/>
+          <field name="sapdiag.diag.supportbits.EMERGENCY_REPAIR" showname="..0. .... = Support Bit EMERGENCY_REPAIR: False" size="1" pos="18" show="0" value="0" unmaskedvalue="30"/>
+          <field name="sapdiag.diag.supportbits.AREA2FRONT" showname=".0.. .... = Support Bit AREA2FRONT: False" size="1" pos="18" show="0" value="0" unmaskedvalue="30"/>
+          <field name="sapdiag.diag.supportbits.SCROLLBAR_WIDTH" showname="1... .... = Support Bit SCROLLBAR_WIDTH: True" size="1" pos="18" show="1" value="1" unmaskedvalue="30"/>
+          <field name="sapdiag.diag.supportbits.AUTORESIZE" showname=".... ...1 = Support Bit AUTORESIZE: True" size="1" pos="19" show="1" value="1" unmaskedvalue="00"/>
+          <field name="sapdiag.diag.supportbits.EDIT_VARLEN" showname=".... ..0. = Support Bit EDIT_VARLEN: False" size="1" pos="19" show="0" value="0" unmaskedvalue="00"/>
+          <field name="sapdiag.diag.supportbits.WORKPLACE" showname=".... .1.. = Support Bit WORKPLACE: True" size="1" pos="19" show="1" value="1" unmaskedvalue="00"/>
+          <field name="sapdiag.diag.supportbits.PRINTDATA" showname=".... 0... = Support Bit PRINTDATA: False" size="1" pos="19" show="0" value="0" unmaskedvalue="00"/>
+          <field name="sapdiag.diag.supportbits.SINGLE_SESSION" showname="...1 .... = Support Bit SINGLE_SESSION: True" size="1" pos="19" show="1" value="1" unmaskedvalue="00"/>
+          <field name="sapdiag.diag.supportbits.NOTIFY_NEWMODE" showname="..0. .... = Support Bit NOTIFY_NEWMODE: False" size="1" pos="19" show="0" value="0" unmaskedvalue="00"/>
+          <field name="sapdiag.diag.supportbits.TOOLBAR_HEIGHT" showname=".0.. .... = Support Bit TOOLBAR_HEIGHT: False" size="1" pos="19" show="0" value="0" unmaskedvalue="00"/>
+          <field name="sapdiag.diag.supportbits.XMLPROP_CONTAINER" showname="0... .... = Support Bit XMLPROP_CONTAINER: False" size="1" pos="19" show="0" value="0" unmaskedvalue="00"/>
+          <field name="sapdiag.diag.supportbits.XMLPROP_DYNPRO" showname=".... ...1 = Support Bit XMLPROP_DYNPRO: True" size="1" pos="20" show="1" value="1" unmaskedvalue="11"/>
+          <field name="sapdiag.diag.supportbits.DP_HTTP_PUT" showname=".... ..1. = Support Bit DP_HTTP_PUT: True" size="1" pos="20" show="1" value="1" unmaskedvalue="11"/>
+          <field name="sapdiag.diag.supportbits.DYNAMIC_PASSPORT" showname=".... .1.. = Support Bit DYNAMIC_PASSPORT: True" size="1" pos="20" show="1" value="1" unmaskedvalue="11"/>
+          <field name="sapdiag.diag.supportbits.WEBGUI" showname=".... 0... = Support Bit WEBGUI: False" size="1" pos="20" show="0" value="0" unmaskedvalue="11"/>
+          <field name="sapdiag.diag.supportbits.WEBGUI_HELPMODE" showname="...1 .... = Support Bit WEBGUI_HELPMODE: True" size="1" pos="20" show="1" value="1" unmaskedvalue="11"/>
+          <field name="sapdiag.diag.supportbits.CONTROL_FOCUS_ON_LIST" showname="..0. .... = Support Bit CONTROL_FOCUS_ON_LIST: False" size="1" pos="20" show="0" value="0" unmaskedvalue="11"/>
+          <field name="sapdiag.diag.supportbits.CBU_RBUDUMMY_2" showname=".0.. .... = Support Bit CBU_RBUDUMMY_2: False" size="1" pos="20" show="0" value="0" unmaskedvalue="11"/>
+          <field name="sapdiag.diag.supportbits.EOKDUMMY_1" showname="1... .... = Support Bit EOKDUMMY_1: True" size="1" pos="20" show="1" value="1" unmaskedvalue="11"/>
+          <field name="sapdiag.diag.supportbits.GUI_USER_SCRIPTING" showname=".... ...1 = Support Bit GUI_USER_SCRIPTING: True" size="1" pos="21" show="1" value="1" unmaskedvalue="c9"/>
+          <field name="sapdiag.diag.supportbits.SLC" showname=".... ..1. = Support Bit SLC: True" size="1" pos="21" show="1" value="1" unmaskedvalue="c9"/>
+          <field name="sapdiag.diag.supportbits.ACCESSIBILITY" showname=".... .0.. = Support Bit ACCESSIBILITY: False" size="1" pos="21" show="0" value="0" unmaskedvalue="c9"/>
+          <field name="sapdiag.diag.supportbits.ECATT" showname=".... 1... = Support Bit ECATT: True" size="1" pos="21" show="1" value="1" unmaskedvalue="c9"/>
+          <field name="sapdiag.diag.supportbits.ENJOY_IMODEUUID3" showname="...0 .... = Support Bit ENJOY_IMODEUUID3: False" size="1" pos="21" show="0" value="0" unmaskedvalue="c9"/>
+          <field name="sapdiag.diag.supportbits.ENABLE_UTF8" showname="..1. .... = Support Bit ENABLE_UTF8: True" size="1" pos="21" show="1" value="1" unmaskedvalue="c9"/>
+          <field name="sapdiag.diag.supportbits.R3INFO_AUTOLOGOUT_TIME" showname=".1.. .... = Support Bit R3INFO_AUTOLOGOUT_TIME: True" size="1" pos="21" show="1" value="1" unmaskedvalue="c9"/>
+          <field name="sapdiag.diag.supportbits.VARINFO_ICON_TITLE_LIST" showname="1... .... = Support Bit VARINFO_ICON_TITLE_LIST: True" size="1" pos="21" show="1" value="1" unmaskedvalue="c9"/>
+          <field name="sapdiag.diag.supportbits.ENABLE_UTF16BE" showname=".... ...0 = Support Bit ENABLE_UTF16BE: False" size="1" pos="22" show="0" value="0" unmaskedvalue="e5"/>
+          <field name="sapdiag.diag.supportbits.ENABLE_UTF16LE" showname=".... ..1. = Support Bit ENABLE_UTF16LE: True" size="1" pos="22" show="1" value="1" unmaskedvalue="e5"/>
+          <field name="sapdiag.diag.supportbits.R3INFO_CODEPAGE_APP" showname=".... .0.. = Support Bit R3INFO_CODEPAGE_APP: False" size="1" pos="22" show="0" value="0" unmaskedvalue="e5"/>
+          <field name="sapdiag.diag.supportbits.ENABLE_APPL4" showname=".... 0... = Support Bit ENABLE_APPL4: False" size="1" pos="22" show="0" value="0" unmaskedvalue="e5"/>
+          <field name="sapdiag.diag.supportbits.GUIPATCHLEVEL" showname="...1 .... = Support Bit GUIPATCHLEVEL: True" size="1" pos="22" show="1" value="1" unmaskedvalue="e5"/>
+          <field name="sapdiag.diag.supportbits.CBURBU_NEW_STATE" showname="..1. .... = Support Bit CBURBU_NEW_STATE: True" size="1" pos="22" show="1" value="1" unmaskedvalue="e5"/>
+          <field name="sapdiag.diag.supportbits.BINARY_EVENTID" showname=".1.. .... = Support Bit BINARY_EVENTID: True" size="1" pos="22" show="1" value="1" unmaskedvalue="e5"/>
+          <field name="sapdiag.diag.supportbits.GUI_THEME" showname="1... .... = Support Bit GUI_THEME: True" size="1" pos="22" show="1" value="1" unmaskedvalue="e5"/>
+          <field name="sapdiag.diag.supportbits.TOP_WINDOW" showname=".... ...1 = Support Bit TOP_WINDOW: True" size="1" pos="23" show="1" value="1" unmaskedvalue="e0"/>
+          <field name="sapdiag.diag.supportbits.EVENT_DESCRIPTION_1" showname=".... ..1. = Support Bit EVENT_DESCRIPTION_1: True" size="1" pos="23" show="1" value="1" unmaskedvalue="e0"/>
+          <field name="sapdiag.diag.supportbits.SPLITTER" showname=".... .1.. = Support Bit SPLITTER: True" size="1" pos="23" show="1" value="1" unmaskedvalue="e0"/>
+          <field name="sapdiag.diag.supportbits.VALUE_4_HISTORY" showname=".... 1... = Support Bit VALUE_4_HISTORY: True" size="1" pos="23" show="1" value="1" unmaskedvalue="e0"/>
+          <field name="sapdiag.diag.supportbits.ACC_LIST" showname="...1 .... = Support Bit ACC_LIST: True" size="1" pos="23" show="1" value="1" unmaskedvalue="e0"/>
+          <field name="sapdiag.diag.supportbits.GUI_USER_SCRIPTING_INFO" showname="..1. .... = Support Bit GUI_USER_SCRIPTING_INFO: True" size="1" pos="23" show="1" value="1" unmaskedvalue="e0"/>
+          <field name="sapdiag.diag.supportbits.TEXTEDIT_STREAM" showname=".0.. .... = Support Bit TEXTEDIT_STREAM: False" size="1" pos="23" show="0" value="0" unmaskedvalue="e0"/>
+          <field name="sapdiag.diag.supportbits.DYNT_NOFOCUS" showname="0... .... = Support Bit DYNT_NOFOCUS: False" size="1" pos="23" show="0" value="0" unmaskedvalue="e0"/>
+          <field name="sapdiag.diag.supportbits.R3INFO_CODEPAGE_APP_1" showname=".... ...1 = Support Bit R3INFO_CODEPAGE_APP_1: True" size="1" pos="24" show="1" value="1" unmaskedvalue="92"/>
+          <field name="sapdiag.diag.supportbits.FRAME_1" showname=".... ..0. = Support Bit FRAME_1: False" size="1" pos="24" show="0" value="0" unmaskedvalue="92"/>
+          <field name="sapdiag.diag.supportbits.TICKET4GUI" showname=".... .1.. = Support Bit TICKET4GUI: True" size="1" pos="24" show="1" value="1" unmaskedvalue="92"/>
+          <field name="sapdiag.diag.supportbits.ACC_LIST_PROPS" showname=".... 1... = Support Bit ACC_LIST_PROPS: True" size="1" pos="24" show="1" value="1" unmaskedvalue="92"/>
+          <field name="sapdiag.diag.supportbits.TABSEL_ATTRIB_INPUT" showname="...0 .... = Support Bit TABSEL_ATTRIB_INPUT: False" size="1" pos="24" show="0" value="0" unmaskedvalue="92"/>
+          <field name="sapdiag.diag.supportbits.DEFAULT_TOOLTIP" showname="..0. .... = Support Bit DEFAULT_TOOLTIP: False" size="1" pos="24" show="0" value="0" unmaskedvalue="92"/>
+          <field name="sapdiag.diag.supportbits.XML_PROP_TABLE_2" showname=".0.. .... = Support Bit XML_PROP_TABLE_2: False" size="1" pos="24" show="0" value="0" unmaskedvalue="92"/>
+          <field name="sapdiag.diag.supportbits.CBU_RBUDUMMY_3" showname="1... .... = Support Bit CBU_RBUDUMMY_3: True" size="1" pos="24" show="1" value="1" unmaskedvalue="92"/>
+          <field name="sapdiag.diag.supportbits.CELLINFO" showname=".... ...1 = Support Bit CELLINFO: True" size="1" pos="25" show="1" value="1" unmaskedvalue="db"/>
+          <field name="sapdiag.diag.supportbits.CONTROL_FOCUS_ON_LIST_2" showname=".... ..1. = Support Bit CONTROL_FOCUS_ON_LIST_2: True" size="1" pos="25" show="1" value="1" unmaskedvalue="db"/>
+          <field name="sapdiag.diag.supportbits.TABLE_COLUMNWIDTH_INPUT" showname=".... .0.. = Support Bit TABLE_COLUMNWIDTH_INPUT: False" size="1" pos="25" show="0" value="0" unmaskedvalue="db"/>
+          <field name="sapdiag.diag.supportbits.ITS_PLUGIN" showname=".... 0... = Support Bit ITS_PLUGIN: False" size="1" pos="25" show="0" value="0" unmaskedvalue="db"/>
+          <field name="sapdiag.diag.supportbits.OBJECT_NAMES_4_LOGIN_PROCESS" showname="...0 .... = Support Bit OBJECT_NAMES_4_LOGIN_PROCESS: False" size="1" pos="25" show="0" value="0" unmaskedvalue="db"/>
+          <field name="sapdiag.diag.supportbits.RFC_SERVER_4_GUI" showname="..0. .... = Support Bit RFC_SERVER_4_GUI: False" size="1" pos="25" show="0" value="0" unmaskedvalue="db"/>
+          <field name="sapdiag.diag.supportbits.R3INFO_FLAGS_2" showname=".0.. .... = Support Bit R3INFO_FLAGS_2: False" size="1" pos="25" show="0" value="0" unmaskedvalue="db"/>
+          <field name="sapdiag.diag.supportbits.RCUI" showname="0... .... = Support Bit RCUI: False" size="1" pos="25" show="0" value="0" unmaskedvalue="db"/>
+          <field name="sapdiag.diag.supportbits.MENUENTRY_WITH_FCODE" showname=".... ...0 = Support Bit MENUENTRY_WITH_FCODE: False" size="1" pos="26" show="0" value="0" unmaskedvalue="79"/>
+          <field name="sapdiag.diag.supportbits.WEBSAPCONSOLE" showname=".... ..0. = Support Bit WEBSAPCONSOLE: False" size="1" pos="26" show="0" value="0" unmaskedvalue="79"/>
+          <field name="sapdiag.diag.supportbits.R3INFO_KERNEL_VERSION" showname=".... .0.. = Support Bit R3INFO_KERNEL_VERSION: False" size="1" pos="26" show="0" value="0" unmaskedvalue="79"/>
+          <field name="sapdiag.diag.supportbits.VARINFO_CONTAINER_LOOP" showname=".... 0... = Support Bit VARINFO_CONTAINER_LOOP: False" size="1" pos="26" show="0" value="0" unmaskedvalue="79"/>
+          <field name="sapdiag.diag.supportbits.EOKDUMMY_2" showname="...1 .... = Support Bit EOKDUMMY_2: True" size="1" pos="26" show="1" value="1" unmaskedvalue="79"/>
+          <field name="sapdiag.diag.supportbits.MESSAGE_INFO3" showname="..1. .... = Support Bit MESSAGE_INFO3: True" size="1" pos="26" show="1" value="1" unmaskedvalue="79"/>
+          <field name="sapdiag.diag.supportbits.SBA2" showname=".1.. .... = Support Bit SBA2: True" size="1" pos="26" show="1" value="1" unmaskedvalue="79"/>
+          <field name="sapdiag.diag.supportbits.MAINAREA_SIZE" showname="0... .... = Support Bit MAINAREA_SIZE: False" size="1" pos="26" show="0" value="0" unmaskedvalue="79"/>
+          <field name="sapdiag.diag.supportbits.GUIPATCHLEVEL_2" showname=".... ...1 = Support Bit GUIPATCHLEVEL_2: True" size="1" pos="27" show="1" value="1" unmaskedvalue="66"/>
+          <field name="sapdiag.diag.supportbits.DISPLAY_SIZE" showname=".... ..1. = Support Bit DISPLAY_SIZE: True" size="1" pos="27" show="1" value="1" unmaskedvalue="66"/>
+          <field name="sapdiag.diag.supportbits.GUI_PACKET" showname=".... .1.. = Support Bit GUI_PACKET: True" size="1" pos="27" show="1" value="1" unmaskedvalue="66"/>
+          <field name="sapdiag.diag.supportbits.DIALOG_STEP_NUMBER" showname=".... 1... = Support Bit DIALOG_STEP_NUMBER: True" size="1" pos="27" show="1" value="1" unmaskedvalue="66"/>
+          <field name="sapdiag.diag.supportbits.TC_KEEP_SCROLL_POSITION" showname="...1 .... = Support Bit TC_KEEP_SCROLL_POSITION: True" size="1" pos="27" show="1" value="1" unmaskedvalue="66"/>
+          <field name="sapdiag.diag.supportbits.MESSAGE_SERVICE_REQUEST" showname="..1. .... = Support Bit MESSAGE_SERVICE_REQUEST: True" size="1" pos="27" show="1" value="1" unmaskedvalue="66"/>
+          <field name="sapdiag.diag.supportbits.DYNT_FOCUS_FRAME" showname=".1.. .... = Support Bit DYNT_FOCUS_FRAME: True" size="1" pos="27" show="1" value="1" unmaskedvalue="66"/>
+          <field name="sapdiag.diag.supportbits.MAX_STRING_LEN" showname="1... .... = Support Bit MAX_STRING_LEN: True" size="1" pos="27" show="1" value="1" unmaskedvalue="66"/>
+          <field name="sapdiag.diag.supportbits.VARINFO_CONTAINER_1" showname=".... ...1 = Support Bit VARINFO_CONTAINER_1: True" size="1" pos="28" show="1" value="1" unmaskedvalue="02"/>
+          <field name="sapdiag.diag.supportbits.STD_TOOLBAR_ITEMS" showname=".... ..1. = Support Bit STD_TOOLBAR_ITEMS: True" size="1" pos="28" show="1" value="1" unmaskedvalue="02"/>
+        </field>
+      </field>
+      <field name="sapdiag.item" showname="Item: APPL, ST_R3INFO, CODEPAGE_DIAG_GUI, Len=15, Codepage number (numeric representation)=4110, Minimum number of bytes per charcter=1, Codepage number (string representation)=4110, Codepage description=UTF8" size="20" pos="37" show="" value="">
+        <field name="sapdiag.item.type" showname="Type: APPL (0x10)" size="1" pos="37" show="0x10" value="7f"/>
+        <field name="sapdiag.item.id" showname="ID: ST_R3INFO (0x06)" size="1" pos="38" show="0x06" value="00"/>
+        <field name="sapdiag.item.sid" showname="SID: CODEPAGE_DIAG_GUI (0x23)" size="1" pos="39" show="0x23" value="00"/>
+        <field name="sapdiag.item.length" showname="Length: 15" size="2" pos="40" show="15" value="6574"/>
+        <field name="sapdiag.item.value" showname="Value" size="15" pos="42" show="" value="">
+          <field name="sapdiag.item.value" showname="Codepage number (numeric representation): 4110" size="4" pos="42" show="" value=""/>
+          <field name="sapdiag.item.value" showname="Minimum number of bytes per charcter: 1" size="1" pos="46" show="" value=""/>
+          <field name="sapdiag.item.value" showname="Codepage number (string representation): 4110" size="5" pos="47" show="" value=""/>
+          <field name="sapdiag.item.value" showname="Codepage description: UTF8" size="5" pos="52" show="" value=""/>
+        </field>
+      </field>
+      <field name="sapdiag.item" showname="Item: APPL, ST_R3INFO, CODEPAGE_APP_SERVER_1, Len=32, Codepage number (numeric representation)=4103, Minimum number of bytes per charcter=2, Codepage number (string representation)=4103, Codepage description=UnicodeLittleUnmarked" size="37" pos="57" show="" value="">
+        <field name="sapdiag.item.type" showname="Type: APPL (0x10)" size="1" pos="57" show="0x10" value="db"/>
+        <field name="sapdiag.item.id" showname="ID: ST_R3INFO (0x06)" size="1" pos="58" show="0x06" value="79"/>
+        <field name="sapdiag.item.sid" showname="SID: CODEPAGE_APP_SERVER_1 (0x27)" size="1" pos="59" show="0x27" value="66"/>
+        <field name="sapdiag.item.length" showname="Length: 32" size="2" pos="60" show="32" value="02c5"/>
+        <field name="sapdiag.item.value" showname="Value" size="32" pos="62" show="" value="">
+          <field name="sapdiag.item.value" showname="Codepage number (numeric representation): 4103" size="4" pos="62" show="" value=""/>
+          <field name="sapdiag.item.value" showname="Minimum number of bytes per charcter: 2" size="1" pos="66" show="" value=""/>
+          <field name="sapdiag.item.value" showname="Codepage number (string representation): 4103" size="5" pos="67" show="" value=""/>
+          <field name="sapdiag.item.value" showname="Codepage description: UnicodeLittleUnmarked" size="22" pos="72" show="" value=""/>
+        </field>
+      </field>
+      <field name="sapdiag.item" showname="Item: APPL, ST_R3INFO, CONTEXTID, Len=32, Value=5284CAC5E8503798E1000000C0A800B2" size="37" pos="94" show="" value="">
+        <field name="sapdiag.item.type" showname="Type: APPL (0x10)" size="1" pos="94" show="0x10" value="e5"/>
+        <field name="sapdiag.item.id" showname="ID: ST_R3INFO (0x06)" size="1" pos="95" show="0x06" value="e0"/>
+        <field name="sapdiag.item.sid" showname="SID: CONTEXTID (0x21)" size="1" pos="96" show="0x21" value="92"/>
+        <field name="sapdiag.item.length" showname="Length: 32" size="2" pos="97" show="32" value="db79"/>
+        <field name="sapdiag.item.value" showname="Value" size="32" pos="99" show="" value="">
+          <field name="sapdiag.item.value" showname="Value: 5284CAC5E8503798E1000000C0A800B2" size="32" pos="99" show="" value=""/>
+        </field>
+      </field>
+      <field name="sapdiag.item" showname="Item: APPL, ST_R3INFO, DBNAME, Len=3, Value=NG0" size="8" pos="131" show="" value="">
+        <field name="sapdiag.item.type" showname="Type: APPL (0x10)" size="1" pos="131" show="0x10" value="e5"/>
+        <field name="sapdiag.item.id" showname="ID: ST_R3INFO (0x06)" size="1" pos="132" show="0x06" value="e0"/>
+        <field name="sapdiag.item.sid" showname="SID: DBNAME (0x02)" size="1" pos="133" show="0x02" value="92"/>
+        <field name="sapdiag.item.length" showname="Length: 3" size="2" pos="134" show="3" value="db79"/>
+        <field name="sapdiag.item.value" showname="Value" size="3" pos="136" show="" value="">
+          <field name="sapdiag.item.value" showname="Value: NG0" size="3" pos="136" show="" value=""/>
+        </field>
+      </field>
+      <field name="sapdiag.item" showname="Item: APPL, ST_R3INFO, CPUNAME, Len=12, Value=labsapsrv038" size="17" pos="139" show="" value="">
+        <field name="sapdiag.item.type" showname="Type: APPL (0x10)" size="1" pos="139" show="0x10" value="0b"/>
+        <field name="sapdiag.item.id" showname="ID: ST_R3INFO (0x06)" size="1" pos="140" show="0x06" value="af"/>
+        <field name="sapdiag.item.sid" showname="SID: CPUNAME (0x03)" size="1" pos="141" show="0x03" value="e2"/>
+        <field name="sapdiag.item.length" showname="Length: 12" size="2" pos="142" show="12" value="1700"/>
+        <field name="sapdiag.item.value" showname="Value" size="12" pos="144" show="" value="">
+          <field name="sapdiag.item.value" showname="Value: labsapsrv038" size="12" pos="144" show="" value=""/>
+        </field>
+      </field>
+      <field name="sapdiag.item" showname="Item: APPL, ST_R3INFO, USERID, Len=2, User ID=12778" size="7" pos="156" show="" value="">
+        <field name="sapdiag.item.type" showname="Type: APPL (0x10)" size="1" pos="156" show="0x10" value="64"/>
+        <field name="sapdiag.item.id" showname="ID: ST_R3INFO (0x06)" size="1" pos="157" show="0x06" value="72"/>
+        <field name="sapdiag.item.sid" showname="SID: USERID (0x19)" size="1" pos="158" show="0x19" value="5f"/>
+        <field name="sapdiag.item.length" showname="Length: 2" size="2" pos="159" show="2" value="6c65"/>
+        <field name="sapdiag.item.value" showname="Value" size="2" pos="161" show="" value="">
+          <field name="sapdiag.item.value" showname="User ID: 12778" size="2" pos="161" show="" value=""/>
+        </field>
+      </field>
+      <field name="sapdiag.item" showname="Item: APPL, ST_R3INFO, MODENUMBER, Len=2, Mode Number=0" size="7" pos="163" show="" value="">
+        <field name="sapdiag.item.type" showname="Type: APPL (0x10)" size="1" pos="163" show="0x10" value="3d"/>
+        <field name="sapdiag.item.id" showname="ID: ST_R3INFO (0x06)" size="1" pos="164" show="0x06" value="3d"/>
+        <field name="sapdiag.item.sid" showname="SID: MODENUMBER (0x01)" size="1" pos="165" show="0x01" value="20"/>
+        <field name="sapdiag.item.length" showname="Length: 2" size="2" pos="166" show="2" value="3230"/>
+        <field name="sapdiag.item.value" showname="Value" size="2" pos="168" show="" value="">
+          <field name="sapdiag.item.value" showname="Mode Number: 0" size="2" pos="168" show="" value=""/>
+        </field>
+      </field>
+      <field name="sapdiag.item" showname="Item: APPL, ST_R3INFO, IMODENUMBER, Len=2, Internal Mode Number=1" size="7" pos="170" show="" value="">
+        <field name="sapdiag.item.type" showname="Type: APPL (0x10)" size="1" pos="170" show="0x10" value="11"/>
+        <field name="sapdiag.item.id" showname="ID: ST_R3INFO (0x06)" size="1" pos="171" show="0x06" value="c9"/>
+        <field name="sapdiag.item.sid" showname="SID: IMODENUMBER (0x0a)" size="1" pos="172" show="0x0a" value="e5"/>
+        <field name="sapdiag.item.length" showname="Length: 2" size="2" pos="173" show="2" value="e092"/>
+        <field name="sapdiag.item.value" showname="Value" size="2" pos="175" show="" value="">
+          <field name="sapdiag.item.value" showname="Internal Mode Number: 1" size="2" pos="175" show="" value=""/>
+        </field>
+      </field>
+      <field name="sapdiag.item" showname="Item: APPL, ST_R3INFO, IMODEUUIDS2, Len=35, Number of uuids=2, UUID=5284cad6e8503798e1000000c0a800b2, Active context=1, UUID=5284cadce8503798e1000000c0a800b2, Active context=0" size="40" pos="177" show="" value="">
+        <field name="sapdiag.item.type" showname="Type: APPL (0x10)" size="1" pos="177" show="0x10" value="66"/>
+        <field name="sapdiag.item.id" showname="ID: ST_R3INFO (0x06)" size="1" pos="178" show="0x06" value="02"/>
+        <field name="sapdiag.item.sid" showname="SID: IMODEUUIDS2 (0x1f)" size="1" pos="179" show="0x1f" value="c5"/>
+        <field name="sapdiag.item.length" showname="Length: 35" size="2" pos="180" show="35" value="0baf"/>
+        <field name="sapdiag.item.value" showname="Value" size="35" pos="182" show="" value="">
+          <field name="sapdiag.item.value" showname="Number of uuids: 2" size="1" pos="182" show="" value=""/>
+          <field name="sapdiag.item.value" showname="UUID: 5284cad6e8503798e1000000c0a800b2" size="16" pos="183" show="" value=""/>
+          <field name="sapdiag.item.value" showname="Active context: 1" size="1" pos="199" show="" value=""/>
+          <field name="sapdiag.item.value" showname="UUID: 5284cadce8503798e1000000c0a800b2" size="16" pos="200" show="" value=""/>
+          <field name="sapdiag.item.value" showname="Active context: 0" size="1" pos="216" show="" value=""/>
+        </field>
+      </field>
+      <field name="sapdiag.item" showname="Item: APPL, ST_R3INFO, GUI_THEME, Len=10, Value=TRADESHOW" size="15" pos="217" show="" value="">
+        <field name="sapdiag.item.type" showname="Type: APPL (0x10)" size="1" pos="217" show="0x10" value="02"/>
+        <field name="sapdiag.item.id" showname="ID: ST_R3INFO (0x06)" size="1" pos="218" show="0x06" value="c5"/>
+        <field name="sapdiag.item.sid" showname="SID: GUI_THEME (0x25)" size="1" pos="219" show="0x25" value="0b"/>
+        <field name="sapdiag.item.length" showname="Length: 10" size="2" pos="220" show="10" value="afe2"/>
+        <field name="sapdiag.item.value" showname="Value" size="10" pos="222" show="" value="">
+          <field name="sapdiag.item.value" showname="Value: TRADESHOW" size="10" pos="222" show="" value=""/>
+        </field>
+      </field>
+      <field name="sapdiag.item" showname="Item: APPL, ST_R3INFO, KERNEL_VERSION, Len=13, Database version=702, Kernel version=7200, Kernel patch level=401" size="18" pos="232" show="" value="">
+        <field name="sapdiag.item.type" showname="Type: APPL (0x10)" size="1" pos="232" show="0x10" value="69"/>
+        <field name="sapdiag.item.id" showname="ID: ST_R3INFO (0x06)" size="1" pos="233" show="0x06" value="70"/>
+        <field name="sapdiag.item.sid" showname="SID: KERNEL_VERSION (0x29)" size="1" pos="234" show="0x29" value="2e"/>
+        <field name="sapdiag.item.length" showname="Length: 13" size="2" pos="235" show="13" value="6473"/>
+        <field name="sapdiag.item.value" showname="Value" size="13" pos="237" show="" value="">
+          <field name="sapdiag.item.value" showname="Database version: 702" size="4" pos="237" show="" value=""/>
+          <field name="sapdiag.item.value" showname="Kernel version: 7200" size="5" pos="241" show="" value=""/>
+          <field name="sapdiag.item.value" showname="Kernel patch level: 401" size="4" pos="246" show="" value=""/>
+        </field>
+      </field>
+      <field name="sapdiag.item" showname="Item: APPL, ST_R3INFO, RFC_DIAG_BLOCK_SIZE, Len=4, RFC Diag Block Size=250000" size="9" pos="250" show="" value="">
+        <field name="sapdiag.item.type" showname="Type: APPL (0x10)" size="1" pos="250" show="0x10" value="20"/>
+        <field name="sapdiag.item.id" showname="ID: ST_R3INFO (0x06)" size="1" pos="251" show="0x06" value="30"/>
+        <field name="sapdiag.item.sid" showname="SID: RFC_DIAG_BLOCK_SIZE (0x16)" size="1" pos="252" show="0x16" value="78"/>
+        <field name="sapdiag.item.length" showname="Length: 4" size="2" pos="253" show="4" value="3030"/>
+        <field name="sapdiag.item.value" showname="Value" size="4" pos="255" show="" value="">
+          <field name="sapdiag.item.value" showname="RFC Diag Block Size: 250000" size="4" pos="255" show="" value=""/>
+        </field>
+      </field>
+      <field name="sapdiag.item" showname="Item: APPL, ST_USER, DIALOG_STEP_NUMBER, Len=4, Dialog Step Number=21" size="9" pos="259" show="" value="">
+        <field name="sapdiag.item.type" showname="Type: APPL (0x10)" size="1" pos="259" show="0x10" value="e5"/>
+        <field name="sapdiag.item.id" showname="ID: ST_USER (0x04)" size="1" pos="260" show="0x04" value="e0"/>
+        <field name="sapdiag.item.sid" showname="SID: DIALOG_STEP_NUMBER (0x26)" size="1" pos="261" show="0x26" value="92"/>
+        <field name="sapdiag.item.length" showname="Length: 4" size="2" pos="262" show="4" value="db79"/>
+        <field name="sapdiag.item.value" showname="Value" size="4" pos="264" show="" value="">
+          <field name="sapdiag.item.value" showname="Dialog Step Number: 21" size="4" pos="264" show="" value=""/>
+        </field>
+      </field>
+      <field name="sapdiag.item" showname="Item: APPL, ST_R3INFO, CLIENT, Len=3, Value=001" size="8" pos="268" show="" value="">
+        <field name="sapdiag.item.type" showname="Type: APPL (0x10)" size="1" pos="268" show="0x10" value="af"/>
+        <field name="sapdiag.item.id" showname="ID: ST_R3INFO (0x06)" size="1" pos="269" show="0x06" value="e2"/>
+        <field name="sapdiag.item.sid" showname="SID: CLIENT (0x0c)" size="1" pos="270" show="0x0c" value="17"/>
+        <field name="sapdiag.item.length" showname="Length: 3" size="2" pos="271" show="3" value="0031"/>
+        <field name="sapdiag.item.value" showname="Value" size="3" pos="273" show="" value="">
+          <field name="sapdiag.item.value" showname="Value: 001" size="3" pos="273" show="" value=""/>
+        </field>
+      </field>
+      <field name="sapdiag.item" showname="Item: SES, Len=16, Flag 1=0, X Pos=0, Y Pos=0, Dim Row=0, Dim Col=0" size="17" pos="276" show="" value="">
+        <field name="sapdiag.item.type" showname="Type: SES (0x01)" size="1" pos="276" show="0x01" value="42"/>
+        <field name="sapdiag.item.value" showname="Value" size="16" pos="277" show="" value="">
+          <field name="sapdiag.item.value" showname="Flag 1: 0" size="1" pos="288" show="" value=""/>
+          <field name="sapdiag.item.value" showname="X Pos: 0" size="1" pos="289" show="" value=""/>
+          <field name="sapdiag.item.value" showname="Y Pos: 0" size="1" pos="290" show="" value=""/>
+          <field name="sapdiag.item.value" showname="Dim Row: 0" size="1" pos="291" show="" value=""/>
+          <field name="sapdiag.item.value" showname="Dim Col: 0" size="1" pos="292" show="" value=""/>
+        </field>
+        <field name="expert" showname="Expert Info (Warn/Undecoded): The Diag Item is dissected partially (0x01, 0x00, 0x00)" size="0" pos="276">
+          <field name="expert.message" showname="Message: The Diag Item is dissected partially (0x01, 0x00, 0x00)" size="0" pos="0" show="The Diag Item is dissected partially (0x01, 0x00, 0x00)"/>
+          <field name="expert.severity" showname="Severity level: Warn" size="0" pos="0" show="0x00600000"/>
+          <field name="expert.group" showname="Group: Undecoded" size="0" pos="0" show="0x05000000"/>
+        </field>
+      </field>
+      <field name="sapdiag.item" showname="Item: APPL, ST_R3INFO, STOP_TRANS, Len=0" size="5" pos="293" show="" value="">
+        <field name="sapdiag.item.type" showname="Type: APPL (0x10)" size="1" pos="293" show="0x10" value="6e"/>
+        <field name="sapdiag.item.id" showname="ID: ST_R3INFO (0x06)" size="1" pos="294" show="0x06" value="20"/>
+        <field name="sapdiag.item.sid" showname="SID: STOP_TRANS (0x15)" size="1" pos="295" show="0x15" value="3d"/>
+        <field name="sapdiag.item.length" showname="Length: 0" size="2" pos="296" show="0" value="3d20"/>
+      </field>
+      <field name="sapdiag.item" showname="Item: EOM, Len=0" size="1" pos="298" show="" value="">
+        <field name="sapdiag.item.type" showname="Type: EOM (0x0c)" size="1" pos="298" show="0x0c" value="30"/>
+      </field>
+    </field>
+  </proto>
+</packet>
+
+
+</pdml>

@@ -1,1 +1,8 @@
-Hello
+== Goal == 
+To develop a framework of scripts that can read in pcap data (e.g. pdml) and output security scripts for use in bug hunting. 
+
+== To Do ==
+- Create script to output python http.requests from http pdml data
+
+== Known Bugs ==
+- If the wireshark dissector does not add the value into the field then it will be missing from the output. 
