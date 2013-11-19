@@ -3,6 +3,9 @@ To develop a framework of scripts that can read in pcap data (e.g. pdml) and out
 
 == To Do ==
 - Create script to output python http.requests from http pdml data
+- Add support for pdml with multiple frames
+- Develop initial script
+- Add check to output where "missing" bytes are
 
 == Known Bugs ==
 - If the wireshark dissector does not add the value into the field then it will be missing from the output. 
