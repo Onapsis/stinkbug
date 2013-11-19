@@ -28,6 +28,6 @@ parse.run(fname,pdml)
 if args.sulley:
     Test.output_sulley("/tmp/stinkbug_"+fname+".txt")
 if args.pbytes:
-    Test.print_buffer("/tmp/stinkbug_"+fname+".txt","00")
-if args.mbytes:
     parse.print_buffer("/tmp/stinkbug_"+fname+".txt","00")
+if args.mbytes:
+    parse.missing_bytes("/tmp/stinkbug_"+fname+".txt","00")
