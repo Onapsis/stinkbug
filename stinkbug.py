@@ -1,5 +1,6 @@
 import sys
 from lib import parse as parse
+from lib import test as Test
 import random 
 import string 
 import argparse
@@ -10,10 +11,10 @@ parser.add_argument('pdml', type=str,
                    help='The PDML file to parse')
 parser.add_argument('--sulley', action="store_true",
                    help='Output a sulley configuration file.')
-parser.add_argument('--missing-bytes', action="store_true",
-                   help='Outputs the location of missing bytes.')
+parser.add_argument('--mbytes', action="store_true",
+                   help='Outputs the location of missing bytes, this is common. *** DOES NOT WORK IF PDML DOES NOT INCLUDE HEX STREAM ***')
 parser.add_argument('--pbytes', action="store_true",
-                   help='Outputs a hex stream for the data if possible ***BUGGY DO TO BROKEN DISSECTORS***')                  
+                   help='Outputs a hex stream for the data if possible ***BUGGY DUE TO BROKEN DISSECTORS***') 
 
 args = parser.parse_args()
 
@@ -25,6 +26,8 @@ print "|+| Using /tmp/stinkbug_"+fname+".txt as a temporary file"
 parse.run(fname,pdml)
 
 if args.sulley:
-    parse.output_sulley("/tmp/stinkbug_"+fname+".txt")
+    Test.output_sulley("/tmp/stinkbug_"+fname+".txt")
 if args.pbytes:
+    Test.print_buffer("/tmp/stinkbug_"+fname+".txt","00")
+if args.mbytes:
     parse.print_buffer("/tmp/stinkbug_"+fname+".txt","00")

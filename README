@@ -6,6 +6,7 @@ To develop a framework of scripts that can read in pcap data (e.g. pdml) and out
 - Create script to output python http.requests from http pdml data
 - Develop initial script
 - Add check to output where "missing" bytes are
+- some files need templates (e.g. sulley, sqlmap, add them)
 
 == Known Bugs ==
 - If the wireshark dissector does not add the value into the field then it will be missing from the output. 
@@ -14,6 +15,7 @@ To develop a framework of scripts that can read in pcap data (e.g. pdml) and out
 The following example is how to create a sulley fuzzing file from giop traffic. 
 
 1. Record traffic from BusinessObjects including CORBA traffic. This has been saved as pcap_samples/giop_sdk.pcap
+
 2. Parse the traffic to one frame, storing it as a PDML file:
 
 $. tshark -T pdml -r pcap_samples/giop_sdk.pcap "frame.number == 24" > pdml_samples/single_giop.pd
