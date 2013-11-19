@@ -2,10 +2,35 @@
 To develop a framework of scripts that can read in pcap data (e.g. pdml) and output security scripts for use in bug hunting. 
 
 == To Do ==
+- ***Add support for pdml with multiple frames***
 - Create script to output python http.requests from http pdml data
-- Add support for pdml with multiple frames
 - Develop initial script
 - Add check to output where "missing" bytes are
 
 == Known Bugs ==
 - If the wireshark dissector does not add the value into the field then it will be missing from the output. 
+
+== Example Usage ==
+The following example is how to create a sulley fuzzing file from giop traffic. 
+
+1. Record traffic from BusinessObjects including CORBA traffic. This has been saved as pcap_samples/giop_sdk.pcap
+2. Parse the traffic to one frame, storing it as a PDML file:
+
+$. tshark -T pdml -r pcap_samples/giop_sdk.pcap "frame.number == 24" > pdml_samples/single_giop.pd
+ml
+
+This file is stored as pdml_samples/single_giop.pdml
+
+3. Use stinkbug to output the sulley stub:
+
+$. python stinkbug.py --sulley pdml_samples/single_giop.pdml
+
+>>
+|+| Using /tmp/stinkbug_j231ehdi8w1ypirt6ya9.txt as a temporary file
+#TOP:giop
+#-GIOP Header
+# TRUTH value:47494f50010100000000023c",pos:66,size:12
+#--giop.magic
+s_static("47494f50")
+....
+<<
