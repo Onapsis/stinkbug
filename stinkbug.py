@@ -26,8 +26,8 @@ print "|+| Using /tmp/stinkbug_"+fname+".txt as a temporary file"
 parse.run(fname,pdml)
 
 if args.sulley:
-    Test.output_sulley("/tmp/stinkbug_"+fname+".txt")
+    Test.output_sulley("/tmp/stinkbug_"+fname+".txt","./templates/sulley_fuzz.py")
 if args.pbytes:
     parse.print_buffer("/tmp/stinkbug_"+fname+".txt","00")
 if args.mbytes:
-    parse.missing_bytes("/tmp/stinkbug_"+fname+".txt","00")
+    parse.missing_bytes("/tmp/stinkbug_"+fname+".txt")

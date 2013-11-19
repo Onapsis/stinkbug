@@ -5,7 +5,6 @@ To develop a framework of scripts that can read in pcap data (e.g. pdml) and out
 - ***Add support for pdml with multiple frames***
 - Create script to output python http.requests from http pdml data
 - Develop initial script
-- Add check to output where "missing" bytes are
 - some files need templates (e.g. sulley, sqlmap, add them)
 
 == Known Bugs ==

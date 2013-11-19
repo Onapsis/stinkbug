@@ -120,9 +120,8 @@ def print_buffer(fname,buff):
     ns.close()
 
 
-# this takes in a file and pieces the stream back together. 
-#   If there are missing hex, it will dumbly add them in as the buffer string
-def print_buffer(fname,buff):
+# this takes in a file and outputs the missing bytes
+def missing_bytes(fname):
     # check for chars not in the pdml that we missed
     ns = open(fname, "r" )
     array = []
