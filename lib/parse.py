@@ -14,7 +14,7 @@ def recurse_tree(val,i,delim,f):
             else:
                 f.write("#"+i*delim+child.get("showname")+"\n")
             if i == 1:
-                f.write("# TRUTH value:"+child.get("value")+"\",pos:"+child.get("pos")+",size:"+child.get("size")+"\n")
+                f.write("# TRUTH value:"+str(child.get("value"))+"\",pos:"+str(child.get("pos"))+",size:"+str(child.get("size"))+"\n")
             recurse_tree(child.getchildren(),i+1,delim,f)
     
         else:
@@ -48,8 +48,8 @@ def recurse_tree(val,i,delim,f):
                     # else the value is not blank
                     f.write(i*delim+"value:\""+str(child.get("value"))+"\",pos:"+str(child.get("pos"))+",size:"+str(child.get("size"))+"\n")
 
-def run(fname):
-    tree = etree.parse(sys.argv[1])
+def run(fname,pdml):
+    tree = etree.parse(pdml)
 
     packets = [e for e in tree.xpath('/pdml/packet/proto')]
 
@@ -116,3 +116,15 @@ def print_buffer(fname,buff):
     print "\n"
     ns.close()
 
+# this takes in a file and outputs the data as a sulley configuration file. 
+def output_sulley(fname):
+    # check for chars not in the pdml that we missed
+    ns = open(fname, "r" )
+
+    for line in ns:
+        if "#" in line:
+            print line.replace("\n","")
+        if "value" in line and not "#" in line:
+            print "s_static(\""+line.split("value:")[1].split(",")[0].replace("\"","")+"\")"
+
+    ns.close()
