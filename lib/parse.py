@@ -5,16 +5,14 @@ unmasked = []
 
 # recurse each packet for the goodness
 def recurse_tree(val,i,delim,f):
-    
     for child in val:
-    
         if len(child.getchildren()) > 0:
             if type(child.get("showname")):
                 f.write("#"+i*delim+str(child.get("show"))+"\n")       
             else:
                 f.write("#"+i*delim+child.get("showname")+"\n")
             if i == 1:
-                f.write("# TRUTH value:"+str(child.get("value"))+"\",pos:"+str(child.get("pos"))+",size:"+str(child.get("size"))+"\n")
+                f.write("# TRUTH value:\""+str(child.get("value"))+"\",pos:"+str(child.get("pos"))+",size:"+str(child.get("size"))+"\n")
             recurse_tree(child.getchildren(),i+1,delim,f)
     
         else:
@@ -40,7 +38,7 @@ def recurse_tree(val,i,delim,f):
                         f.write(i*delim+"value:\""+str(child.get("value"))+"\",pos:"+str(child.get("pos"))+",size:"+str(child.get("size"))+"\n")
     
             else:
-                f.write("#"+i*delim+child.get("show"))
+                f.write("#"+i*delim+child.get("show")+"\n")
                 
                 if str(child.get("value")) == "":
                     # if the value is blank print an error
@@ -49,13 +47,7 @@ def recurse_tree(val,i,delim,f):
                     # else the value is not blank
                     f.write(i*delim+"value:\""+str(child.get("value"))+"\",pos:"+str(child.get("pos"))+",size:"+str(child.get("size"))+"\n")
 
-def run(fname,pdml):
-    # import the pdml into tree
-    tree = etree.parse(pdml)
-
-    # parse based on protocol
-    packets = [e for e in tree.xpath('/pdml/packet/proto')]
-
+def run(fname,pdml,packets):
     # ignore boring parts of the frame
     consts = ["geninfo","frame","eth","ip","tcp"]
 
@@ -64,17 +56,16 @@ def run(fname,pdml):
 
     # create a temporary file
     f = open("/tmp/stinkbug_"+fname+".txt",'w')
-
-    # parse the pdml and write to the file                   
-    for i in packets:
-        if not i.get("name") in consts:
-            
+   
+    for packet in packets:
+        if not packet.get("name") in consts:
+                    
             # Not one of the common fields
-            f.write("\n#TOP:"+str(i.get("name")))
-            
+            f.write("\n#TOP:"+str(packet.get("name")))
+                    
             #if we have children, call recursion
-            if len(i.getchildren()) > 0:
-                recurse_tree(i.getchildren(),1,"-",f)
+            if len(packet.getchildren()) > 0:
+                recurse_tree(packet.getchildren(),1,"-",f)
             else:
                 print "Hrm, no children"
 
@@ -94,7 +85,7 @@ def print_buffer(fname,buff):
     for line in ns:
         # check for the truth first
         if "TRUTH" in line:
-            old_pos = int(line.split("pos:")[1].split(",")[0])
+            old_pos = int(line.split("pos:\"")[1].split(",")[0])
             truth_pos = old_pos
             
         if "#" in line:
@@ -123,7 +114,7 @@ def print_buffer(fname,buff):
 # this takes in a file and outputs the missing bytes
 def missing_bytes(fname):
     # check for chars not in the pdml that we missed
-    ns = open(fname, "r" )
+    ns = open(fname, "rw" )
     array = []
 
     old_pos = 0
@@ -139,6 +130,11 @@ def missing_bytes(fname):
             #print line
             "ignore"
         if "value" in line and not "#" in line:
+            if truth_pos == 0:
+                print "|!| There was no top level value (i.e. TRUTH), check the dissector for correctness"
+                ns.close()
+                break
+                 
             #print line
             #print line.split("value:")[1].split(",")[0].replace("\"","")
             if old_pos == truth_pos:
@@ -149,7 +145,7 @@ def missing_bytes(fname):
                 new_pos = pos+int(line.split("size:")[1])
                 
                 if not old_pos == pos:
-                    print "#|!| bytes missing, check at position "+str(pos)+" for "+str(int(pos-old_pos))+" missing bytes"
+                    print "#|!| bytes missing, check starting at position "+str(pos)+" for "+str(int(pos-old_pos))+" missing bytes"
                     #print "value:"+str("00"*int(pos-old_pos)) 
                     #sys.stdout.write(str(buff*int(pos-old_pos)))           
                 old_pos = new_pos

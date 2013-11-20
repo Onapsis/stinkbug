@@ -2,13 +2,15 @@
 To develop a framework of scripts that can read in pcap data (e.g. pdml) and output security scripts for use in bug hunting. 
 
 == To Do ==
-- ***Add support for pdml with multiple frames***
+- **can we seperate the tests into different files and have each file have different input parameters?**
+- sqlmap support
+- output directory with filename stub
 - Create script to output python http.requests from http pdml data
-- Develop initial script
-- some files need templates (e.g. sulley, sqlmap, add them)
+- have multiple bytes check output into file
 
 == Known Bugs ==
 - If the wireshark dissector does not add the value into the field then it will be missing from the output. 
+- occasionally the "truth" gobbles up values that should actually be outputed, track this down
 
 == Example Usage ==
 The following example is how to create a sulley fuzzing file from giop traffic. 
