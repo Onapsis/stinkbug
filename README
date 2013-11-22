@@ -5,6 +5,10 @@ To develop a framework of scripts that can read in pcap data (e.g. pdml) and out
 - add workaround for sapdiag bug
 - output directory with filename stub
 - have multiple bytes check output into file
+- sqlmap TODOs
+-- support POST requests
+-- support cookies
+-- support useragent selection
 
 
 == Known Bugs ==
