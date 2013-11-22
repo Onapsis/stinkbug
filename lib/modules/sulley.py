@@ -82,5 +82,5 @@ def load_(subparser):
     parser.set_defaults(func=main)
     parser.add_argument('pdml', type=str, help='PDML file to parse')
     parser.add_argument('--outfile', type=str,
-                   help='Output a test to a file; NOTE: only works on SECURITY_TESTS')
+                   help='Output a test to a file')
 
