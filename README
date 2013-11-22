@@ -2,13 +2,14 @@
 To develop a framework of scripts that can read in pcap data (e.g. pdml) and output security scripts for use in bug hunting. 
 
 == To Do ==
-- sqlmap support
+- add workaround for sapdiag bug
 - output directory with filename stub
 - have multiple bytes check output into file
 
+
 == Known Bugs ==
-- If the wireshark dissector does not add the value into the field then it will be missing from the output. 
-- occasionally the "truth" gobbles up values that should actually be outputed, track this down
+- If the wireshark dissector does not add the value to the value field then it will be missing from the output. 
+- some packets do not support a value field at the top of the tree which is used for the truth; there should be a workaround for this
 
 == Example Usage ==
 The following example is how to create a sulley fuzzing file from giop traffic. 
