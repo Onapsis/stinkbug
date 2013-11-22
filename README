@@ -2,10 +2,8 @@
 To develop a framework of scripts that can read in pcap data (e.g. pdml) and output security scripts for use in bug hunting. 
 
 == To Do ==
-- **can we seperate the tests into different files and have each file have different input parameters?**
 - sqlmap support
 - output directory with filename stub
-- Create script to output python http.requests from http pdml data
 - have multiple bytes check output into file
 
 == Known Bugs ==
@@ -26,7 +24,7 @@ This file is stored as pdml_samples/single_giop.pdml
 
 3. Use stinkbug to output the sulley stub:
 
-$. python stinkbug.py --sulley pdml_samples/single_giop.pdml
+$. python stinkbug.py sulley pdml_samples/single_giop.pdml
 
 >>
 |+| Using /tmp/stinkbug_j231ehdi8w1ypirt6ya9.txt as a temporary file
