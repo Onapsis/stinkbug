@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Peach>
+<!-- Stinkbug style -->
+    
+    <DataModel name="Request">
+		<!-- << -------- >> -->
+	</DataModel>
+	
+	<StateModel name="TheStateModel" initialState="TheState">
+		<State name="TheState">
+			<Action type="output">
+				<DataModel ref="Request" />
+			</Action>
+		</State>
+	</StateModel>
+
+	<!-- Agents that run localy will be started automatically by Peach, kept for example purposes -->
+	<Agent name="RemoteAgent">
+		<!--<Monitor class="debugger.WindowsDebugEngine">
+			<Param name="WinDbgPath" value="C:\Program Files\Debugging Tools for Windows 64-bit\" />
+			<Param name="ProcessName" value="EXE_NAME"/>
+			<Param name="WaitForExitTimeout" value="250"/>-->
+			<!--<Param name="CommandLine" value='COMMAND'/>-->
+		<!-- Enable heap debugging on our process as well. -->
+<!--		<Monitor class="PageHeap">
+			<Param name="Executable" value="EXE_NAME"/>
+			<Param name="WinDbgPath" value="C:\Program Files\Debugging Tools for Windows 64-bit\" />
+
+		</Monitor>
+	-->
+	</Agent>
+
+	
+	<Test name="Default">
+		<Agent ref="RemoteAgent" />
+		<StateModel ref="TheStateModel"/>
+
+		<Publisher class="TcpClient">
+			<Param name="Host" value="172.16.106.132" /> <!--- FILL ME OUT !!! -->
+			<Param name="Port" value="9999" /> <!--- FILL ME OUT !!! -->
+		</Publisher>
+		
+		<Logger class="Filesystem">
+			<Param name="Path" value="Logs" />
+		</Logger>
+		
+		
+	</Test>
+
+</Peach>

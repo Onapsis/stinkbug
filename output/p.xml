@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Peach>
+<!-- Stinkbug style -->
+    
+    <DataModel name="Request">
+		<!--#TOP:giop#-GIOP Header-->
+		<!--# TRUTH value:"47494f50010100000000023c",pos:66,size:12-->
+		<!--#--giop.magic-->
+		<Blob name="Unknown0" value=""47 49 4f 50 " mutable="false" />
+		<!--#--Version: 1.1-->
+		<!--#---giop.major_version-->
+		<Blob name="Unknown1" value=""01 " mutable="false" />
+		<!--#---giop.minor_version-->
+		<Blob name="Unknown2" value=""01 " mutable="false" />
+		<!--#---0x00-->
+		<!--#----giop.flags.ziop_enabled-->
+		<Blob name="Unknown3" value=""00 " mutable="false" />
+		<!--#----^^^^giop.flags.ziop_supported-->
+		<!--#----^^^^giop.flags.fragment-->
+		<!--#----^^^^giop.flags.little_endian-->
+		<!--#--giop.type-->
+		<Blob name="Unknown4" value=""00 " mutable="false" />
+		<!--#--giop.len-->
+		<Blob name="Unknown5" value=""00 00 02 3c " mutable="false" />
+		<!--#TOP:fake-field-wrapper#-General Inter-ORB Protocol Request-->
+		<!--# TRUTH value:"0000000100001000000001a97b7469636b3d323b64657074683d303b726f6f743d7b6e616d653d7b636f6d706f6e656e743d2242495053444b223b6d6574686f643d2253657373696f6e4d67723a6c6f676f6e223b7d3b69643d7b686f73743d22776b7331313931223b7069643d31303238353b7469643d313b646174615f69643d323b737465705f69643d313b7d3b7d3b63616c6c65723d7b6e616d653d7b636f6d706f6e656e743d22223b6d6574686f643d22223b7d3b69643d7b686f73743d22223b7069643d303b7469643d303b646174615f69643d303b737465705f69643d303b7d3b7d3b63616c6c65653d7b6e616d653d7b636f6d706f6e656e743d2242495053444b223b6d6574686f643d2253657373696f6e4d67723a6c6f676f6e223b7d3b69643d7b686f73743d22776b7331313931223b7069643d31303238353b7469643d313b646174615f69643d323b737465705f69643d313b7d3b7d3b766172733d5b7b6b65793d22416374696f6e4944223b76616c75653d22436b5270625f684f5055695775374d747257777746627731223b7d5d3b73657474696e67733d5b5d3b70617373706f72743d22223b7d0000000000000001010000000000001000000000adccf151f8590d00020000000000000b6e6577536572766963650000000000000000000a0049006e0066006f00530074006f0072006500000000001c006f007300630061003a00690069006f0070003a002f002f003b005300320053004400530043005600520059003d00740072007500650000",pos:78,size:572-->
+		<!--#--ServiceContextList-->
+		<!--#---giop.seqlen-->
+		<Blob name="Unknown6" value=""00 00 00 01 " mutable="false" />
+		<!--#---giop.iiop.vscid-->
+		<Blob name="Unknown7" value=""00 00 10 00 " mutable="false" />
+		<!--#---^^^giop.iiop.scid-->
+		<!--#---giop.context_data_len-->
+		<Blob name="Unknown8" value=""00 00 01 a9 " mutable="false" />
+		<!--#---giop.context_data-->
+		<Blob name="Unknown9" value=""7b 74 69 63 6b 3d 32 3b 64 65 70 74 68 3d 30 3b 72 6f 6f 74 3d 7b 6e 61 6d 65 3d 7b 63 6f 6d 70 6f 6e 65 6e 74 3d 22 42 49 50 53 44 4b 22 3b 6d 65 74 68 6f 64 3d 22 53 65 73 73 69 6f 6e 4d 67 72 3a 6c 6f 67 6f 6e 22 3b 7d 3b 69 64 3d 7b 68 6f 73 74 3d 22 77 6b 73 31 31 39 31 22 3b 70 69 64 3d 31 30 32 38 35 3b 74 69 64 3d 31 3b 64 61 74 61 5f 69 64 3d 32 3b 73 74 65 70 5f 69 64 3d 31 3b 7d 3b 7d 3b 63 61 6c 6c 65 72 3d 7b 6e 61 6d 65 3d 7b 63 6f 6d 70 6f 6e 65 6e 74 3d 22 22 3b 6d 65 74 68 6f 64 3d 22 22 3b 7d 3b 69 64 3d 7b 68 6f 73 74 3d 22 22 3b 70 69 64 3d 30 3b 74 69 64 3d 30 3b 64 61 74 61 5f 69 64 3d 30 3b 73 74 65 70 5f 69 64 3d 30 3b 7d 3b 7d 3b 63 61 6c 6c 65 65 3d 7b 6e 61 6d 65 3d 7b 63 6f 6d 70 6f 6e 65 6e 74 3d 22 42 49 50 53 44 4b 22 3b 6d 65 74 68 6f 64 3d 22 53 65 73 73 69 6f 6e 4d 67 72 3a 6c 6f 67 6f 6e 22 3b 7d 3b 69 64 3d 7b 68 6f 73 74 3d 22 77 6b 73 31 31 39 31 22 3b 70 69 64 3d 31 30 32 38 35 3b 74 69 64 3d 31 3b 64 61 74 61 5f 69 64 3d 32 3b 73 74 65 70 5f 69 64 3d 31 3b 7d 3b 7d 3b 76 61 72 73 3d 5b 7b 6b 65 79 3d 22 41 63 74 69 6f 6e 49 44 22 3b 76 61 6c 75 65 3d 22 43 6b 52 70 62 5f 68 4f 50 55 69 57 75 37 4d 74 72 57 77 77 46 62 77 31 22 3b 7d 5d 3b 73 65 74 74 69 6e 67 73 3d 5b 5d 3b 70 61 73 73 70 6f 72 74 3d 22 22 3b 7d 00 " mutable="false" />
+		<!--#--giop.request_id-->
+		<Blob name="Unknown10" value=""00 00 00 01 " mutable="false" />
+		<!--#--giop.rsp_expected-->
+		<Blob name="Unknown11" value=""01 " mutable="false" />
+		<!--#--giop.reserved-->
+		<Blob name="Unknown12" value=""00 00 00 " mutable="false" />
+		<!--#--giop.objektkey_len-->
+		<Blob name="Unknown13" value=""00 00 00 10 " mutable="false" />
+		<!--#--giop.objektkey-->
+		<Blob name="Unknown14" value=""00 00 00 00 ad cc f1 51 f8 59 0d 00 02 00 00 00 " mutable="false" />
+		<!--#--giop.request_op_len-->
+		<Blob name="Unknown15" value=""00 00 00 0b " mutable="false" />
+		<!--#--giop.request_op-->
+		<Blob name="Unknown16" value=""6e 65 77 53 65 72 76 69 63 65 00 " mutable="false" />
+		<!--#--giop.request_principal_len-->
+		<Blob name="Unknown17" value=""00 00 00 00 " mutable="false" />
+		<!--#--giop.stub_data-->
+		<Blob name="Unknown18" value=""00 00 00 0a 00 49 00 6e 00 66 00 6f 00 53 00 74 00 6f 00 72 00 65 00 00 00 00 00 1c 00 6f 00 73 00 63 00 61 00 3a 00 69 00 69 00 6f 00 70 00 3a 00 2f 00 2f 00 3b 00 53 00 32 00 53 00 44 00 53 00 43 00 56 00 52 00 59 00 3d 00 74 00 72 00 75 00 65 00 00 " mutable="false" />
+	</DataModel>
+	
+	<StateModel name="TheStateModel" initialState="TheState">
+		<State name="TheState">
+			<Action type="output">
+				<DataModel ref="Request" />
+			</Action>
+		</State>
+	</StateModel>
+
+	<!-- Agents that run localy will be started automatically by Peach, kept for example purposes -->
+	<Agent name="RemoteAgent">
+		<!--<Monitor class="debugger.WindowsDebugEngine">
+			<Param name="WinDbgPath" value="C:\Program Files\Debugging Tools for Windows 64-bit\" />
+			<Param name="ProcessName" value="EXE_NAME"/>
+			<Param name="WaitForExitTimeout" value="250"/>-->
+			<!--<Param name="CommandLine" value='COMMAND'/>-->
+		<!-- Enable heap debugging on our process as well. -->
+<!--		<Monitor class="PageHeap">
+			<Param name="Executable" value="EXE_NAME"/>
+			<Param name="WinDbgPath" value="C:\Program Files\Debugging Tools for Windows 64-bit\" />
+
+		</Monitor>
+	-->
+	</Agent>
+
+	
+	<Test name="Default">
+		<Agent ref="RemoteAgent" />
+		<StateModel ref="TheStateModel"/>
+
+		<Publisher class="TcpClient">
+			<Param name="Host" value="172.16.106.132" /> <!--- FILL ME OUT !!! -->
+			<Param name="Port" value="9999" /> <!--- FILL ME OUT !!! -->
+		</Publisher>
+		
+		<Logger class="Filesystem">
+			<Param name="Path" value="Logs" />
+		</Logger>
+		
+		
+	</Test>
+
+</Peach>
