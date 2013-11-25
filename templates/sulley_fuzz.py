@@ -5,7 +5,7 @@ import sys
 from sulley import *
 
 # Time to wait between mutations
-SLEEP_TIME=10
+SLEEP_TIME=1
 # Time to wait before claiming a host is unresponsive
 TIMEOUT=1
 # number of crashes to observe before skipping the remainder of a group
@@ -20,7 +20,7 @@ s_initialize("UNIQUE_packet")
 print "Total mutations: " + str(s_num_mutations()) + "\n"
 print "Minimum time for execution: " + str(round(((s_num_mutations() * (SLEEP_TIME))/3600),2)) + " hours."
 
-sess = sessions.session(session_filename="cs32_packet.sess", sleep_time=SLEEP_TIME, timeout=TIMEOUT, crash_threshold=CRASH_THRESHOLD)
+sess = sessions.session(session_filename="UNIQUE_packet.sess", sleep_time=SLEEP_TIME, timeout=TIMEOUT, crash_threshold=CRASH_THRESHOLD)
 
 # Tie this session to the unique packet name fuzzing case
 sess.connect(s_get("UNIQUE_packet"))

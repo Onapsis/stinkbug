@@ -85,8 +85,12 @@ def print_buffer(fname,buff):
     for line in ns:
         # check for the truth first
         if "TRUTH" in line:
-            old_pos = int(line.split("pos:\"")[1].split(",")[0])
-            truth_pos = old_pos
+            if "pos:\"" in line:
+                old_pos = int(line.split("pos:\"")[1].split(",")[0])
+                truth_pos = old_pos
+            if "pos:" in line:
+                old_pos = int(line.split("pos:")[1].split(",")[0])
+                truth_pos = old_pos
             
         if "#" in line:
             #print line
@@ -109,7 +113,6 @@ def print_buffer(fname,buff):
 
     print "\n"
     ns.close()
-
 
 # this takes in a file and outputs the missing bytes
 def missing_bytes(fname):

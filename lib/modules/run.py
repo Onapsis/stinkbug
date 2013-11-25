@@ -2,6 +2,7 @@ from lxml import etree
 import random 
 import string 
 from lib import parse as parse
+import os
 
 def main(args):    
     pdml = args.pdml
@@ -25,9 +26,11 @@ def main(args):
         parse.run(fname,pdml,frame.getchildren())
 
         if args.pbytes:
-            parse.print_buffer("/tmp/stinkbug_"+fname+".txt","00")
+            parse.print_buffer("/tmp/stinkbug_"+fname+".txt","cc")
         if args.mbytes:
             parse.missing_bytes("/tmp/stinkbug_"+fname+".txt")
+        if args.pp:
+            os.system("cat /tmp/stinkbug_"+fname+".txt")
         n = n + 1
 
 # initialize the module here
@@ -39,3 +42,5 @@ def load_(subparser):
                    help='Outputs the location of missing bytes, this is common. *** DOES NOT WORK IF PDML DOES NOT INCLUDE HEX STREAM ***')
     parser.add_argument('--pbytes', action="store_true",
                    help='Outputs a hex stream for the data if possible ***BUGGY DUE TO BROKEN DISSECTORS***')
+    parser.add_argument('--pp', action="store_true",
+                   help='Prints out the parsed version of the file.')
