@@ -30,6 +30,7 @@ def main(args):
         if args.mbytes:
             parse.missing_bytes("/tmp/stinkbug_"+fname+".txt")
         if args.pp:
+            #! WARNING. There should be a better way to do this than a system call for cat -_- 
             os.system("cat /tmp/stinkbug_"+fname+".txt")
         n = n + 1
 
