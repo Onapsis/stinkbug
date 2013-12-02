@@ -3,13 +3,21 @@ To develop a framework of scripts that can read in pcap data (e.g. pdml) and out
 
 == To Do ==
 - add workaround for sapdiag bug
-- output directory with filename stub
 - have multiple bytes check output into file
 - sqlmap TODOs
 -- support POST requests
 -- support cookies
 -- support useragent selection
+- add excluded IPs file ability
 
+== To Do Tools == 
+- web services tester? (bperry's tool)
+- nmap check db?
+-- given an input, what to check for in nmap, output a script to do that
+- dirbuster or the like
+- http method fuzzer
+- python http library
+- sqlninja
 
 == Known Bugs ==
 - If the wireshark dissector does not add the value to the value field then it will be missing from the output. 

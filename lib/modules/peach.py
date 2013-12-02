@@ -55,7 +55,7 @@ def output(fname,template):
         else:
             print temp_line.replace("\n","")
         
-# sulley module
+# peach module
 def main(args):
     pdml = args.pdml
 
@@ -69,7 +69,7 @@ def main(args):
 
     print "|+| "+str(n_frames)+" packets in input"
     ofname = ''.join(random.choice(string.ascii_lowercase + string.digits) for x in range(20))
-
+    
     n = 1
     if len(frames) > 1 and args.outfile:
             print "|!| More than one frame, but --outfile used. Please use --outdir instead."
@@ -77,14 +77,21 @@ def main(args):
             
     for frame in frames:
         fname = ofname+"_"+str(n)
+        outfile = ""
+        
         print "|+| Using /tmp/stinkbug_"+fname+".txt as a temporary file"
         parse.run(fname,pdml,frame.getchildren())
     
         if args.outfile:
             print "|+| Writing output to "+str(args.outfile)
             output_file("/tmp/stinkbug_"+fname+".txt","./templates/peach.xml",args.outfile)        
+        if args.outdir:
+            outfile = str(args.outdir)+"peach_"+str(ofname)+"_"+str(n)+".txt"
+            print "|+| Writing output to "+outfile
+            output_file("/tmp/stinkbug_"+fname+".txt","./templates/peach.xml",outfile)        
         else: 
             output("/tmp/stinkbug_"+fname+".txt","./templates/peach.xml")
+        n = n + 1
 
 # initialize the module here
 def load_(subparser):
@@ -93,4 +100,7 @@ def load_(subparser):
     parser.add_argument('pdml', type=str, help='PDML file to parse')
     parser.add_argument('--outfile', type=str,
                    help='Output a test to a file')
+    parser.add_argument('--outdir', type=str,
+                   help='A directory to output the files to.')
+
 

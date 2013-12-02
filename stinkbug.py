@@ -2,7 +2,6 @@ import sys
 import argparse
 import os
 
-# 
 parser = argparse.ArgumentParser(description='Stinkbug',add_help=False) 
 
 # add a subparser for the modules
