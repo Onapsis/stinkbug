@@ -4,6 +4,7 @@ To develop a framework of scripts that can read in pcap data (e.g. pdml) and out
 == To Do ==
 - add workaround for sapdiag bug
 - have multiple bytes check output into file
+- a filter for values. Use case would be HTTP which each line is seperated using 0x0d 0x0a ("\r\n")
 - sqlmap TODOs
 -- support POST requests
 -- support cookies

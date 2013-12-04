@@ -15,7 +15,12 @@ CRASH_THRESHOLD=300
 # TODO ------- THIS PACKET NAME SHOULD BE UNIQUE
 s_initialize("UNIQUE_packet")
 
+# define a group primitive listing the various HTTP verbs we wish to fuzz.
+s_group("verbs", values=["OPTIONS","GET","HEAD","POST","PUT","DELETE","TRACE","CONNECT","PROPFIND","PROPPATCH","MKCOL","COPY","MOVE","LOCK","UNLOCK","VERSION-CONTROL","REPORT","CHECKOUT","CHECKIN","UNCHECKOUT","MKWORKSPACE","UPDATE","LABEL","MERGE","BASELINE-CONTROL","MKACTIVITY","ORDERPATCH","ACL","PATCH","SEARCH","ARBITRARY"])
+
+if s_block_start("body", group="verbs"):
 # << -------- >>
+s_block_end("body")
 
 print "Total mutations: " + str(s_num_mutations()) + "\n"
 print "Minimum time for execution: " + str(round(((s_num_mutations() * (SLEEP_TIME))/3600),2)) + " hours."
