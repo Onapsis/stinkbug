@@ -2,59 +2,6 @@ from lxml import etree
 import random 
 import string 
 from lib import parse as parse
-
-
-# this takes in a file and outputs the data as a sulley configuration file. 
-def output_file(fname,template,outfile):
-    temp = open(template, "r" )
-    outfile = open(outfile,"w")
-    
-    for temp_line in temp:
-        if "<< -------- >>" in temp_line:            
-            # check for chars not in the pdml that we missed
-            ns = open(fname, "r" )
-    
-            num = 0
-            for line in ns:
-                if "#" in line:
-                    outfile.write("#"+line.replace("\n","")+"\n")
-                if "value" in line and not "#" in line:
-                    # peach uses space between hex value, value needs to be parsed
-                    s = line.split("value:")[1].split(",")[0].replace("\"","")
-                    p_value = "".join(s[i:i+2] + " " for i in xrange(0,len(s),2)) 
-                    
-                    outfile.write("s_static(\""+line.split("value:")[1].split(",")[0].replace("\"","")+"\".decode(\"hex\"))"+"\n")
-                    num = num + 1
-         
-            ns.close()
-        else:
-            outfile.write(temp_line.replace("\n","")+"\n")
-    outfile.close()
-            
-# this takes in a file and outputs the data as a peach configuration file. 
-def output(fname,template):
-    temp = open(template, "r" )
-    
-    for temp_line in temp:
-        if "<< -------- >>" in temp_line:            
-            # check for chars not in the pdml that we missed
-            ns = open(fname, "r" )
-    
-            num = 0
-            for line in ns:
-                if "#" in line:
-                    print "		#"+line.replace("\n","")+""
-                if "value" in line and not "#" in line:
-                    # peach uses space between hex value, value needs to be parsed
-                    s = line.split("value:")[1].split(",")[0].replace("\"","")
-                    p_value = "".join(s[i:i+2] + " " for i in xrange(0,len(s),2)) 
-                    
-                    print "s_static(\""+line.split("value:")[1].split(",")[0].replace("\"","")+"\")"
-                    num = num + 1
-         
-            ns.close()
-        else:
-            print temp_line.replace("\n","")
                     
 def main(args):
     pdml = args.pdml
@@ -86,13 +33,14 @@ def main(args):
     
         if args.outfile:
             print "|+| Writing output to "+str(args.outfile)
-            output_file("/tmp/stinkbug_"+fname+".txt",template,args.outfile)        
+            parse.output_file("/tmp/stinkbug_"+fname+".txt",template,args.outfile,"s_static(\"===VALUE===\")","#===VALUE===")        
         if args.outdir:
             outfile = str(args.outdir)+"peach_"+str(ofname)+"_"+str(n)+".txt"
             print "|+| Writing output to "+outfile
-            output_file("/tmp/stinkbug_"+fname+".txt",template,outfile)        
+            parse.output_file("/tmp/stinkbug_"+fname+".txt",template,outfile,"s_static(\"===VALUE===\")","#===VALUE===")        
         else: 
-            output("/tmp/stinkbug_"+fname+".txt",template)
+            # the value option is specific to sulley
+            parse.output("/tmp/stinkbug_"+fname+".txt",template,"s_static(\"===VALUE===\")","#===VALUE===")
         n = n + 1
 
 

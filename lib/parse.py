@@ -1,5 +1,6 @@
 from lxml import etree
-import sys 
+import sys
+import random 
 
 unmasked = []
 
@@ -161,3 +162,61 @@ def missing_bytes(fname):
     print "\n"
     ns.close()
 
+# this takes in a file and outputs the data given the inp string
+#   For example for peach inp will be "s_static(===VALUE===)"
+def output(fname,template,inp, comment):
+    temp = open(template, "r" )
+    
+    for temp_line in temp:
+        if "<< -------- >>" in temp_line:            
+            # check for chars not in the pdml that we missed
+            ns = open(fname, "r" )
+    
+            num = 0
+            for line in ns:
+                if "#" in line:
+                    v = line.replace("\n","")
+                    print comment.replace("===VALUE===",v)
+                if "value" in line and not "#" in line:
+                    # peach uses space between hex value, value needs to be parsed
+                    s = line.split("value:")[1].split(",")[0].replace("\"","")
+                    p_value = "".join(s[i:i+2] + " " for i in xrange(0,len(s),2)) 
+                    val = line.split("value:")[1].split(",")[0].replace("\"","")
+                    print inp.replace("===VALUE===",val).replace("===RAND===",str(random.randrange(0,1000)))
+                    num = num + 1
+         
+            ns.close()
+        else:
+            print temp_line.replace("\n","")
+
+# this takes in a file and writes a file from a template 
+def output_file(fname,template,outfile,inp,comment):
+    temp = open(template, "r" )
+    outfile = open(outfile,"w")
+    
+    for temp_line in temp:
+        if "<< -------- >>" in temp_line:            
+            # check for chars not in the pdml that we missed
+            ns = open(fname, "r" )
+    
+            num = 0
+            for line in ns:
+                if "#" in line:
+                    v = line.replace("\n","")
+                    outfile.write(comment.replace("===VALUE===",v))
+                    outfile.write("\n")
+                if "value" in line and not "#" in line:
+                    # peach uses space between hex value, value needs to be parsed
+                    s = line.split("value:")[1].split(",")[0].replace("\"","")
+                    p_value = "".join(s[i:i+2] + " " for i in xrange(0,len(s),2)) 
+                    
+                    val = line.split("value:")[1].split(",")[0].replace("\"","")
+                    outfile.write(inp.replace("===VALUE===",val).replace("===RAND===",str(random.randrange(0,1000))))
+                    outfile.write("\n")
+                    num = num + 1
+         
+            ns.close()
+        else:
+            outfile.write(temp_line.replace("\n","")+"\n")
+    outfile.close()
+            

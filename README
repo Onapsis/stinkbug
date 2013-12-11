@@ -1,15 +1,15 @@
-== Goal == 
+# Goal
 To develop a framework of scripts that can read in pcap data (e.g. pdml) and output security scripts for use in bug hunting. 
 
-== To Do ==
-- sapdiag progress: Currently sapdiag "works" and is usable if compression is disabled (simple todo with pysap); (7th byte = 0x01 in each packet?). The next level will be to decompress on the fly within stinkbug. This would likely need to be done by the user specifying the location of the pysap library or we would have to ship.  
+# To Do
 - Ability to apply filters into strings. Use case would be HTTP which each line is seperated using 0x0d 0x0a ("\r\n")
 - sqlmap TODOs
 -- support POST requests
 -- support cookies
 -- support useragent selection
+- sapdiag progress: Currently sapdiag "works" and is usable if compression is disabled (simple todo with pysap); (7th byte = 0x01 in each packet?). The next level will be to decompress on the fly within stinkbug. This would likely need to be done by the user specifying the location of the pysap library or we would have to ship.  
 
-== To Do Tools == 
+# To Do Tools
 - dirbuster or the like
 - http method fuzzer
 - python http library
@@ -18,10 +18,10 @@ To develop a framework of scripts that can read in pcap data (e.g. pdml) and out
 - nmap check db?
 -- given an input, what to check for in nmap, output a script to do that
 
-== Known Bugs ==
+# Known Bugs 
 - some packets do not support a value field at the top of the tree which is used for the truth; there should be a workaround for this
 
-== Example Usage ==
+# Example Usage 
 The following example is how to create a sulley fuzzing file from giop traffic. 
 
 1. Record traffic from BusinessObjects including CORBA traffic. This has been saved as pcap_samples/giop_sdk.pcap
