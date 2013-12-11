@@ -8,7 +8,12 @@ def recurse_tree(val,i,delim,f):
     for child in val:
         if len(child.getchildren()) > 0:
             if type(child.get("showname")):
-                f.write("#"+i*delim+str(child.get("show"))+"\n")       
+                f.write("#"+i*delim+str(child.get("show"))+"\n")                       
+            if child.get("name") == "expert":
+                # there was an error, lets grab the value if we can
+                if type(child.getparent().get("value")):
+                    f.write("#"+i*delim+child.get("showname")+"\n")
+                    f.write(i*delim+"value:\""+str(child.getparent().get("value"))+"\",pos:"+str(child.getparent().get("pos"))+",size:"+str(child.getparent().get("size"))+"\n")
             else:
                 f.write("#"+i*delim+child.get("showname")+"\n")
             if i == 1:
@@ -33,7 +38,7 @@ def recurse_tree(val,i,delim,f):
                 else:
                     f.write("#"+i*delim+child.get("name")+"\n") 
                     if str(child.get("value")) == "" or child.get("value") is None:
-                        f.write("#"+i*delim+"UNSURE WHAT TO DO ==> "+str(child.get("showname"))+"\n")
+                        f.write("#"+i*delim+"UNSURE WHAT TO DO WITH ==> "+str(child.get("showname"))+"\n")
                     else:
                         f.write(i*delim+"value:\""+str(child.get("value"))+"\",pos:"+str(child.get("pos"))+",size:"+str(child.get("size"))+"\n")
     
@@ -42,7 +47,7 @@ def recurse_tree(val,i,delim,f):
                 
                 if str(child.get("value")) == "":
                     # if the value is blank print an error
-                    f.write("#"+i*delim+"UNSURE WHAT TO DO ==> "+i*delim+str(child.get("showname"))+"\n")
+                    f.write("#"+i*delim+"UNSURE WHAT TO DO WITH ==> "+i*delim+str(child.get("showname"))+"\n")
                 else:
                     # else the value is not blank
                     f.write(i*delim+"value:\""+str(child.get("value"))+"\",pos:"+str(child.get("pos"))+",size:"+str(child.get("size"))+"\n")
