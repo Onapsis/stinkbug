@@ -7,12 +7,13 @@ from lib import parse as parse
 def output_file(fname,template,outfile):
     verb,uri,host = "","",""
     outfile = open(outfile,"w")
-    
+   
     # piece together the request
     with open(fname) as f:
         ns = f.readlines()
    
     i = 0
+    verb,uri,cookie,referer,ua,data = "","","","","",""
     for line in ns:
         if "http.request.method" in line:
             linex = ns[i+1]
@@ -20,9 +21,18 @@ def output_file(fname,template,outfile):
         if "http.request.uri" in line:
             linex = ns[i+1]
             uri = linex.split("value:")[1].split(",")[0].replace("\"","").decode("hex").replace("\r\n","")
-        if "http.host" in line:
+        if "http.cookie" in line:
             linex = ns[i+1]
-            host = linex.split("value:")[1].split(",")[0].replace("\"","").decode("hex").replace("Host: ","").replace("\r\n","")
+            cookie = linex.split("value:")[1].split(",")[0].replace("\"","").decode("hex")
+        if "http.referer" in line:
+            linex = ns[i+1]
+            referer = linex.split("value:")[1].split(",")[0].replace("\"","").decode("hex")
+        if "http.user_agent" in line:
+            linex = ns[i+1]
+            ua = linex.split("value:")[1].split(",")[0].replace("\"","").decode("hex")
+        if "TOP:data-text" in line:
+            linex = ns[i+1]
+            data = linex.split("value:")[1].split(",")[0].replace("\"","").decode("hex")
         i = i + 1
     
     if verb == "":
@@ -33,13 +43,26 @@ def output_file(fname,template,outfile):
         # write the template file here
         for temp_line in temp:
             if "url =" in temp_line:
-                outfile.write("url= http://"+host+uri
-                outfile.write("\n")
+                outfile.write("url= http://"+host+uri+"\n")
             else:
-                outfile.write(temp_line.replace("\n",""))
-                outfile.write("\n")
+                outfile.write(temp_line.replace("\n","")+"\n")
+    if verb == "POST":
+        # write the template file here
+        for temp_line in temp:
+            if "data =" in temp_line:
+                outfile.write("data = \""+data.replace("\"","\\""")+"\""+"\n")
+            elif "cookie =" in temp_line:
+                outfile.write("cookie = \""+str(cookie)+"\""+"\n")
+            elif "referer =" in temp_line:
+                outfile.write("referer = "+str(referer)+"\n")                          
+            elif "host =" in temp_line:
+                outfile.write("host = http://"+host+uri+"\n")
+            else:
+                outfile.write(temp_line.replace("\n","")+"\n")        
     else:
         print "|!| Unknown verb used, printing out the info. Good luck."
+
+
             
 # this takes in a file and outputs the data as a sqlmap configuration file. 
 def output(fname,template):
@@ -50,6 +73,7 @@ def output(fname,template):
         ns = f.readlines()
    
     i = 0
+    verb,uri,cookie,referer,ua,data = "","","","","",""
     for line in ns:
         if "http.request.method" in line:
             linex = ns[i+1]
@@ -57,9 +81,18 @@ def output(fname,template):
         if "http.request.uri" in line:
             linex = ns[i+1]
             uri = linex.split("value:")[1].split(",")[0].replace("\"","").decode("hex").replace("\r\n","")
-        if "http.host" in line:
+        if "http.cookie" in line:
             linex = ns[i+1]
-            host = linex.split("value:")[1].split(",")[0].replace("\"","").decode("hex").replace("Host: ","").replace("\r\n","")
+            cookie = linex.split("value:")[1].split(",")[0].replace("\"","").decode("hex")
+        if "http.referer" in line:
+            linex = ns[i+1]
+            referer = linex.split("value:")[1].split(",")[0].replace("\"","").decode("hex")
+        if "http.user_agent" in line:
+            linex = ns[i+1]
+            ua = linex.split("value:")[1].split(",")[0].replace("\"","").decode("hex")
+        if "TOP:data-text" in line:
+            linex = ns[i+1]
+            data = linex.split("value:")[1].split(",")[0].replace("\"","").decode("hex")
         i = i + 1
     
     if verb == "":
@@ -73,10 +106,25 @@ def output(fname,template):
                 print "url= http://"+host+uri
             else:
                 print temp_line.replace("\n","")
+    if verb == "POST":
+        # write the template file here
+        for temp_line in temp:
+            if "data =" in temp_line:
+                print "data = \""+data.replace("\"","\\""")+"\""
+            elif "cookie =" in temp_line:
+                print "cookie = \""+str(cookie)+"\""
+            elif "referer =" in temp_line:
+                print "referer = "+str(referer)                           
+            elif "host =" in temp_line:
+                print "host = http://"+host+uri
+            else:
+                print temp_line.replace("\n","")        
     else:
         print "|!| Unknown verb used, printing out the info. Good luck."
-    
-# sulley module
+
+
+            
+# sqlmap module
 def main(args):
     pdml = args.pdml
 
@@ -105,6 +153,11 @@ def main(args):
         if args.outfile:
             print "|+| Writing output to "+str(args.outfile)
             output_file("/tmp/stinkbug_"+fname+".txt","./templates/sqlmap.conf",args.outfile)        
+        elif args.outdir:
+            outfile = str(args.outdir)+"peach_"+str(ofname)+"_"+str(n)+".txt"
+            print "|+| Writing output to "+outfile
+            output_file("/tmp/stinkbug_"+fname+".txt","./templates/sqlmap.conf",outfile) 
+            
         else: 
             output("/tmp/stinkbug_"+fname+".txt","./templates/sqlmap.conf")
 
@@ -114,5 +167,8 @@ def load_(subparser):
     parser.set_defaults(func=main)
     parser.add_argument('pdml', type=str, help='PDML file to parse')
     parser.add_argument('--outfile', type=str,
-                   help='Output a test to a file; NOTE: only works on SECURITY_TESTS')
+                   help='Output a test to a file')
+    parser.add_argument('--outdir', type=str,
+                   help='A directory to output the files to.')
+
     
