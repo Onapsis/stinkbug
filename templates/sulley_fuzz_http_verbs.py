@@ -19,7 +19,7 @@ s_initialize("UNIQUE_packet")
 s_group("verbs", values=["OPTIONS","GET","HEAD","POST","PUT","DELETE","TRACE","CONNECT","PROPFIND","PROPPATCH","MKCOL","COPY","MOVE","LOCK","UNLOCK","VERSION-CONTROL","REPORT","CHECKOUT","CHECKIN","UNCHECKOUT","MKWORKSPACE","UPDATE","LABEL","MERGE","BASELINE-CONTROL","MKACTIVITY","ORDERPATCH","ACL","PATCH","SEARCH","ARBITRARY"])
 
 if s_block_start("body", group="verbs"):
-# << -------- >>
+<< -------- >>
 s_block_end("body")
 
 print "Total mutations: " + str(s_num_mutations()) + "\n"

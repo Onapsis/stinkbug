@@ -5,24 +5,41 @@ from lib import parse as parse
 
 # this takes in a file and outputs the data as a sqlmap configuration file. 
 def output_file(fname,template,outfile):
+    verb,uri,host = "","",""
+    outfile = open(outfile,"w")
+    
+    # piece together the request
+    with open(fname) as f:
+        ns = f.readlines()
+   
+    i = 0
+    for line in ns:
+        if "http.request.method" in line:
+            linex = ns[i+1]
+            verb = linex.split("value:")[1].split(",")[0].replace("\"","").decode("hex")
+        if "http.request.uri" in line:
+            linex = ns[i+1]
+            uri = linex.split("value:")[1].split(",")[0].replace("\"","").decode("hex").replace("\r\n","")
+        if "http.host" in line:
+            linex = ns[i+1]
+            host = linex.split("value:")[1].split(",")[0].replace("\"","").decode("hex").replace("Host: ","").replace("\r\n","")
+        i = i + 1
+    
+    if verb == "":
+        return
 
     temp = open(template, "r" )
-    out = open(outfile, "w" )
-    
-    for temp_line in temp:
-        if "# << -------- >>" in temp_line:            
-            # check for chars not in the pdml that we missed
-            ns = open(fname, "r" )
-
-            for line in ns:
-                if "#" in line:
-                    out.write(line.replace("\n","")+"\n")
-                if "value" in line and not "#" in line:
-                    out.write("s_static(\""+line.split("value:")[1].split(",")[0].replace("\"","")+"\".decode(\"hex\"))"+"\n")
-
-            ns.close()
-        else:
-            out.write(temp_line.replace("\n","")+"\n")
+    if verb == "GET":        
+        # write the template file here
+        for temp_line in temp:
+            if "url =" in temp_line:
+                outfile.write("url= http://"+host+uri
+                outfile.write("\n")
+            else:
+                outfile.write(temp_line.replace("\n",""))
+                outfile.write("\n")
+    else:
+        print "|!| Unknown verb used, printing out the info. Good luck."
             
 # this takes in a file and outputs the data as a sqlmap configuration file. 
 def output(fname,template):
@@ -53,7 +70,7 @@ def output(fname,template):
         # write the template file here
         for temp_line in temp:
             if "url =" in temp_line:
-                print "url =http://"+host+uri
+                print "url= http://"+host+uri
             else:
                 print temp_line.replace("\n","")
     else:

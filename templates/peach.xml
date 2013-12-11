@@ -3,7 +3,7 @@
 <!-- Stinkbug style -->
     
     <DataModel name="Request">
-		<!-- << -------- >> -->
+		<< -------- >>
 	</DataModel>
 	
 	<StateModel name="TheStateModel" initialState="TheState">

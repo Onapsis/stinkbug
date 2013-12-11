@@ -16,7 +16,7 @@ def recurse_tree(val,i,delim,f):
                     f.write("#"+i*delim+child.get("showname")+"\n")
                     f.write(i*delim+"value:\""+str(child.getparent().get("value"))+"\",pos:"+str(child.getparent().get("pos"))+",size:"+str(child.getparent().get("size"))+"\n")
             else:
-                f.write("#"+i*delim+child.get("showname")+"\n")
+                f.write("#"+str(i*delim)+str(child.get("showname"))+"\n")
             if i == 1:
                 f.write("# TRUTH value:\""+str(child.get("value"))+"\",pos:"+str(child.get("pos"))+",size:"+str(child.get("size"))+"\n")
             recurse_tree(child.getchildren(),i+1,delim,f)

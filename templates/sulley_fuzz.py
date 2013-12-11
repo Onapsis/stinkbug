@@ -15,7 +15,7 @@ CRASH_THRESHOLD=300
 # TODO ------- THIS PACKET NAME SHOULD BE UNIQUE
 s_initialize("UNIQUE_packet")
 
-# << -------- >>
+<< -------- >>
 
 print "Total mutations: " + str(s_num_mutations()) + "\n"
 print "Minimum time for execution: " + str(round(((s_num_mutations() * (SLEEP_TIME))/3600),2)) + " hours."
